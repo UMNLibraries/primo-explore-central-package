@@ -1,0 +1,9 @@
+{
+  "name": "CENTRAL_PACKAGE",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "devDependencies": {
+    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v1.0.4"
+  }
+}
