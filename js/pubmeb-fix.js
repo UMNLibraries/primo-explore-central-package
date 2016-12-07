@@ -28,6 +28,6 @@ app.component('pubmedFix', {
   require: {
     parent: '^prmServiceLinksAfter'
   },
-	controller: 'pubmedFixController'
+  controller: 'pubmedFixController'
 });
 
