@@ -1,0 +1,10 @@
+{
+  "primary": "#7a0019",
+  "secondary" : "#809FA6",
+  "backgroundColor" : "#ffffff",
+  "links": "#5C92BD",
+  "warning": "tomato",
+  "positive": "#0f7d00",
+  "negative": "gray",
+  "notice": "#e08303"
+} 
