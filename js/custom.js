@@ -81,24 +81,6 @@ app.component('pubmedFix', {
   controller: 'pubmedFixController'
 });
 
-app.component('hathiTrustAvailability', {
-  require: {
-    parent: '^prmSearchResultAvailabilityLineAfter'
-  },
-  bindings: {
-    hideOnline: '<',
-    msg: '@?'
-  },
-  controller: 'hathiTrustAvailabilityController',
-  template: '<span class="umnHathiTrustLink">\
-              <a target="_blank" ng-if="$ctrl.fullTextLink" ng-href="{{$ctrl.fullTextLink}}">\
-              {{$ctrl.msg}}\
-                <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>\
-              </a>\
-            </span>'
-
-});
-
 app.controller('hathiTrustAvailabilityController', ['hathiTrust', function (hathiTrust) {
   var self = this;
 
@@ -132,33 +114,56 @@ app.controller('hathiTrustAvailabilityController', ['hathiTrust', function (hath
   };
 }]);
 
+app.component('hathiTrustAvailability', {
+  require: {
+    parent: '^prmSearchResultAvailabilityLineAfter'
+  },
+  bindings: {
+    hideOnline: '<',
+    msg: '@?'
+  },
+  controller: 'hathiTrustAvailabilityController',
+  template: '<span class="umnHathiTrustLink">\
+              <a target="_blank" ng-if="$ctrl.fullTextLink" ng-href="{{$ctrl.fullTextLink}}">\
+              {{$ctrl.msg}}\
+                <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>\
+              </a>\
+            </span>'
+
+});
+
 app.factory('hathiTrust', ['$http', '$q', function ($http, $q) {
   var svc = {};
   var hathiTrustBaseUrl = "https://catalog.hathitrust.org/api/volumes/brief/json/";
 
   svc.findFullViewRecord = function (ids) {
-    var hathiTrustFullTextRecord = false;
     var deferred = $q.defer();
-    if (ids.length) {
-      var hathiTrustLookupUrl = hathiTrustBaseUrl + ids.join('|') + "?callback=JSON_CALLBACK";
-      $http.jsonp(hathiTrustLookupUrl, { cache: true }).success(function (data) {
-        for (var i = 0; !hathiTrustFullTextRecord && i < ids.length; i++) {
-          var result = data[ids[i]];
-          for (var j = 0; j < result.items.length; j++) {
-            var item = result.items[j];
-            if (item.usRightsString.toLowerCase() == "full view") {
-              hathiTrustFullTextRecord = result.records[item.fromRecord].recordURL;
-              break;
-            }
+
+    var handleResponse = function handleResponse(data) {
+      var fullTextUrl = null;
+      for (var i = 0; !fullTextUrl && i < ids.length; i++) {
+        var result = data[ids[i]];
+        for (var j = 0; j < result.items.length; j++) {
+          var item = result.items[j];
+          if (item.usRightsString.toLowerCase() === "full view") {
+            fullTextUrl = result.records[item.fromRecord].recordURL;
+            break;
           }
         }
-        deferred.resolve(hathiTrustFullTextRecord);
-      });
+      }
+      deferred.resolve(fullTextUrl);
+    };
+
+    if (ids.length) {
+      var hathiTrustLookupUrl = hathiTrustBaseUrl + ids.join('|') + "?callback=JSON_CALLBACK";
+      $http.jsonp(hathiTrustLookupUrl, { cache: true }).success(handleResponse);
     } else {
-      deferred.resolve(false);
+      deferred.resolve(null);
     }
+
     return deferred.promise;
   };
+
   return svc;
 }]);
 })();
