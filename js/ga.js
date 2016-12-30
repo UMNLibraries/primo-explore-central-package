@@ -30,5 +30,3 @@ app.run(['$rootScope', '$location', '$window', function($rootScope, $location, $
   });
 
 }]);
-
-

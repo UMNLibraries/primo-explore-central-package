@@ -496,6 +496,22 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
   color: gray; }
 
 /* primary color hook end*/
+md-toast.blogger-notification {
+  background-color: #FFCC33;
+	font-size: 1.5em;
+	position: relative;
+}
+md-toast.blogger-notification .md-toast-text {
+	color: #000;
+	font-size: 1em;
+}
+md-toast.blogger-notification .md-button {
+	min-height: auto;
+	line-height: inherit;
+	font-size: inherit;
+	color: #7A0019;
+}
+
 span.umnHathiTrustLink {
   background-image: url(../img/hathitrust.ico);
   background-repeat: no-repeat;

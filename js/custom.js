@@ -4,6 +4,47 @@
 
 var app = angular.module('centralCustom', ['angularLoad']);
 
+app.factory('bloggerNotifications', ['$mdToast', '$http', '$timeout', function ($mdToast, $http, $timeout) {
+  var svc = {};
+
+  var showToast = function showToast(msg) {
+    $mdToast.show({
+      controllerAs: 'ctrl',
+      bindToController: true,
+      autoWrap: false,
+      position: 'start',
+      hideDelay: 0,
+      controller: ['$mdToast', function ($mdToast) {
+        this.msg = msg;
+        this.close = function () {
+          $mdToast.hide();
+        };
+      }],
+      template: '<md-toast class="blogger-notification">\n                    <span class="md-toast-text" flex>{{ctrl.msg}}</span>\n                    <md-button ng-click="ctrl.close()">Close<md-button>\n                  </md-toast>'
+
+    });
+  };
+
+  svc.show = function (url) {
+    var url = url + '?alt=json-in-script&callback=JSON_CALLBACK';
+    $http.jsonp(url).success(function (data) {
+      var entry = data.feed.entry;
+      if (entry) {
+        var title = entry[0].title.$t;
+        var content = entry[0].content.$t;
+        showToast(title + ': ' + content);
+      }
+    });
+  };
+
+  return svc;
+}]);
+
+app.run(['bloggerNotifications', function (bloggerNotifications) {
+  var bloggerUrl = 'https://umnprimonotifications.blogspot.com/feeds/posts/default';
+  bloggerNotifications.show(bloggerUrl);
+}]);
+
 app.run(['$rootScope', '$location', '$window', function ($rootScope, $location, $window) {
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
