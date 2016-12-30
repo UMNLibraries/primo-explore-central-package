@@ -52,14 +52,11 @@ app.run(['$rootScope', '$location', '$window', function ($rootScope, $location, 
     }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
   })($window, $window.document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  var isProd = function isProd() {
-    return (/^(primo.lib|prime2.oit|umn-almaprimo.hosted).*/.test($location.host())
-    );
-  };
+  var isProd = /^(primo.lib|prime2.oit|umn-almaprimo.hosted).*/.test($location.host());
 
   var trackingId;
 
-  if (isProd()) {
+  if (isProd) {
     trackingId = 'UA-20973358-32';
   } else {
     trackingId = 'UA-20973358-29';
