@@ -512,6 +512,8 @@ md-toast.blogger-notification .md-button {
 	color: #7A0019;
 }
 
+.pinDummy prm-icon {color: #809FA6;}
+
 span.umnHathiTrustLink {
   background-image: url(../img/hathitrust.ico);
   background-repeat: no-repeat;
