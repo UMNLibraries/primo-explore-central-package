@@ -1,33 +1,36 @@
-app.controller('pubmedFixController', ['$location', function($location){
-  var self = this;
 
-  var otoolMap = {
+function lookupOtool() {
+  let inst = window.appConfig['primo-view']['institution']['institution-code'];
+  let otools = {
     TWINCITIES: "umnbmlib",
     DULUTH: "umndlib",
-    CROOKSTON: "mnumclib"};
-  var view = ($location.search().vid || '');
-  var otool = otoolMap[view];
-
-  var isPubmedUrl = function(url) {
-    return /pubmed.gov\/\d+$/.test(url);
+    CROOKSTON: "mnumclib"
   }
+  return otools[inst] || null;
+}
 
-  self.$onInit = function() {
-    self.parentCtrl = this.parent.parentCtrl;
-    var links = self.parentCtrl.recordLinks;
-    for (var i=0; i < links.length; i++) {
-      if (otool && isPubmedUrl(links[i].linkURL)) {
-         links[i].linkURL += "?otool=" + otool;
-      }
+function isPubmedUrl(url) {
+  return /pubmed.gov\/\d+$/.test(url);
+}
+
+function fixPubmedLinks(links) {
+  let otool = lookupOtool();
+  for (let i=0; i < links.length; i++) {
+    if (otool && isPubmedUrl(links[i].linkURL)) {
+      links[i].linkURL += "?otool=" + otool;
     }
   }
+}
 
-}]);
-
-app.component('pubmedFix', {
+export let PubmedLinkFix = {
   require: {
-    parent: '^prmServiceLinksAfter'
+    prmServiceLinks: '^prmServiceLinks'
   },
-  controller: 'pubmedFixController'
-});
+  controller: class PubmedFixController {
+    $onInit() {
+      let links = this.prmServiceLinks.recordLinks;
+      fixPubmedLinks(links);
+    }
+  }
+};
 
