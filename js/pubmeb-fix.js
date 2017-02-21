@@ -22,7 +22,7 @@ function fixPubmedLinks(links) {
   }
 }
 
-export let PubmedLinkFix = {
+let PubmedLinkFix = {
   require: {
     prmServiceLinks: '^prmServiceLinks'
   },
@@ -33,4 +33,6 @@ export let PubmedLinkFix = {
     }
   }
 };
+
+export default PubmedLinkFix;
 

@@ -1,86 +1,63 @@
-export class BloggerNotifications {
-  constructor($mdToast, $http) {
-    this.$mdToast = $mdToast;
-    this.$http = $http;
+const BASE_URL = 'https://umnprimonotifications.blogspot.com/feeds/posts/default';
+
+class BloggerNotifications {
+
+  constructor($mdToast, $http, $document) {
+    this._$mdToast = $mdToast;
+    this._$http = $http;
+    this._$document = $document;
+    this.url = BASE_URL + '?alt=json-in-script&callback=JSON_CALLBACK';
   }
 
-  showToast(msg) {
-      this.$mdToast.show({
-        controllerAs: 'ctrl',
-        bindToController: true,
-        autoWrap: false,
-        position: 'start',
-        hideDelay: 0,
-        controller: ['$mdToast', function($mdToast) {
-          this.msg = msg;
-          this.close = function() {$mdToast.hide()};
-        }],       
-        template: `<md-toast class="blogger-notification">
-                    <span class="md-toast-text" flex>{{ctrl.msg}}</span>
-                    <md-button ng-click="ctrl.close()">Close<md-button>
-                  </md-toast>`
-                  
-      }); 
+  _showToast(msg) {
+    this._$mdToast.show({
+      controllerAs: 'ctrl',
+      bindToController: true,
+      autoWrap: false,
+      position: 'top',
+      parent: this._$document[0].getElementsByTagName('html')[0],
+      hideDelay: 10000,
+      locals: {
+        $mdToast: this._$mdToast, 
+        msg: msg
+      },
+      controller: class {
+        close() {
+          this.$mdToast.hide()
+        };
+      },       
+      template: `<md-toast class="blogger-notification">
+                  <span class="md-toast-text" flex>{{ctrl.msg}}</span>
+                  <!--<md-button ng-click="ctrl.close()">Close<md-button>-->
+                </md-toast>`
+                
+    }); 
   }
 
-  show(url) {
-      var url = url + '?alt=json-in-script&callback=JSON_CALLBACK';
-      this.$http.jsonp(url).success(data => {
-      var entry = data.feed.entry;
+  show() {
+    this._$http.jsonp(this.url).success(data => {
+      let entry = data.feed.entry;
       if (entry) {
         let title = entry[0].title.$t;
         let content = entry[0].content.$t;
-        this.showToast(title + ': ' + content);
+        this._showToast(title + ': ' + content);
       }  
     });
   }  
 
 }
 
-BloggerNotifications.$inject = ['$mdToast', '$http'];
+BloggerNotifications.$inject = ['$mdToast', '$http', '$document'];
 
-/*
-app.factory('bloggerNotifications', ['$mdToast', '$http', '$timeout', function($mdToast, $http, $timeout) {
-  var svc = {};
+runBlock.$inject = ['bloggerNotifications'];
 
-  var showToast = function(msg) {
-      $mdToast.show({
-        controllerAs: 'ctrl',
-        bindToController: true,
-        autoWrap: false,
-        position: 'start',
-        hideDelay: 0,
-        controller: ['$mdToast', function($mdToast) {
-          this.msg = msg;
-          this.close = function() {$mdToast.hide()};
-        }],       
-        template: `<md-toast class="blogger-notification">
-                    <span class="md-toast-text" flex>{{ctrl.msg}}</span>
-                    <md-button ng-click="ctrl.close()">Close<md-button>
-                  </md-toast>`
-                  
-      }); 
-  }; 
+function runBlock(bloggerNotifications) {
+  bloggerNotifications.show();
+}
 
-  svc.show = function(url) {
-    var url = url + '?alt=json-in-script&callback=JSON_CALLBACK';
-    $http.jsonp(url).success(function(data) {
-      var entry = data.feed.entry;
-      if (entry) {
-        var title = entry[0].title.$t;
-        var content = entry[0].content.$t;
-        showToast(title + ': ' + content);
-      }  
-    });
-  }  
+export default angular
+  .module('bloggerNotifications', [])
+  .service('bloggerNotifications', BloggerNotifications)
+  .run(runBlock);
 
-  return svc;
-
-}]);
-
-app.run(['bloggerNotifications', function(bloggerNotifications) {
-  var bloggerUrl = 'https://umnprimonotifications.blogspot.com/feeds/posts/default';
-  bloggerNotifications.show(bloggerUrl);
-}]);
-*/
 

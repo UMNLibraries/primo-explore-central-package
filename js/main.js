@@ -1,19 +1,12 @@
-import {PubmedLinkFix} from './pubmeb-fix'
-import {BloggerNotifications} from './blogger-notifications.js'
+import './google-analytics'
+import './blogger-notifications'
+import PubmedLinkFix from './pubmeb-fix'
 
-let app = angular.module('centralCustom', ['angularLoad']);
+angular
+  .module('centralCustom', ['angularLoad', 'googleAnalytics', 'bloggerNotifications'])
+  .component('pubmedLinkFix', PubmedLinkFix)
+  .component('prmServiceLinksAfter', {
+    template: '<pubmed-link-fix></pubmed-link-fix>'
+  });
 
-app.component('pubmedLinkFix', PubmedLinkFix);
-app.component('prmServiceLinksAfter', {
-  template: '<pubmed-link-fix></pubmed-link-fix>'
-});
-
-app.service('BloggerNotifications', BloggerNotifications);
-
-
-app.run(['BloggerNotifications', function(bloggerNotifications) {
-  var bloggerUrl = 'https://umnprimonotifications.blogspot.com/feeds/posts/default';
-  console.log(bloggerNotifications);
-  bloggerNotifications.show(bloggerUrl);
-}]);
 
