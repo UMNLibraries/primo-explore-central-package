@@ -4,6 +4,9 @@
   "description": "",
   "author": "",
   "devDependencies": {
-    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v1.0.7"
+  },
+  "dependencies": {
+    "angular-cookies": "^1.6.1",
+    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v2.1.1"
   }
 }
