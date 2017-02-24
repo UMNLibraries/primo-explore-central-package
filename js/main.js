@@ -3,6 +3,7 @@ import './google-analytics'
 import './blogger-notifications'
 import RemoveAlmaSkin from './remove-alma-skin.js'
 import PubmedLinkFix from './pubmeb-fix'
+import HidePcAvailability from './hide-pc-availability.js'
 
 const REQUIRED_MODULES = [ 'angularLoad', 
                            'hathiTrustAvailability', 
@@ -17,6 +18,10 @@ angular
   })
   .component('prmSearchResultAvailabilityLineAfter', { 
     template: '<hathi-trust-availability hide-online=true></hathi-trust-availability>'
+  })
+  .component('hidePcAvailability', HidePcAvailability)
+  .component('prmFacetAfter', {
+    template: '<hide-pc-availability></hide-pc-availability>'
   })
   .component('removeAlmaSkin', RemoveAlmaSkin)
   .component('prmFullViewServiceContainerAfter', {
