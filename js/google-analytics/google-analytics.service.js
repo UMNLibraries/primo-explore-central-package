@@ -52,15 +52,5 @@ class GoogleAnalytics {
 
 GoogleAnalytics.$inject = ['$rootScope', '$location', '$window'];
 
-runBlock.$inject = ['googleAnalytics'];
-
-function runBlock(googleAnalytics) {
-  googleAnalytics.trackPageviews();
-}
-
-export default angular
-  .module('googleAnalytics', [])
-  .service('googleAnalytics', GoogleAnalytics)
-  .run(runBlock);
-
+export default GoogleAnalytics;
 

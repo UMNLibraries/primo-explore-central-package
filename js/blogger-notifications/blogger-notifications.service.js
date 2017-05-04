@@ -49,15 +49,5 @@ class BloggerNotifications {
 
 BloggerNotifications.$inject = ['$mdToast', '$http', '$document'];
 
-runBlock.$inject = ['bloggerNotifications'];
-
-function runBlock(bloggerNotifications) {
-  bloggerNotifications.show();
-}
-
-export default angular
-  .module('bloggerNotifications', [])
-  .service('bloggerNotifications', BloggerNotifications)
-  .run(runBlock);
-
+export default BloggerNotifications;
 

@@ -8,7 +8,7 @@
     "protractor": "latest"
   },
   "dependencies": {
-    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v2.1.1"
+    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v2.1.2"
   },
   "scripts": {
     "test-e2e": "protractor e2e-tests/protractor.conf",
