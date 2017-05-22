@@ -6,7 +6,6 @@ angular
   .module('centralCustom', [ 
     PrmAfterComponents, 
     GoogleAnalytics, 
-    BloggerNotifications 
+    BloggerNotifications
   ]);
-
 

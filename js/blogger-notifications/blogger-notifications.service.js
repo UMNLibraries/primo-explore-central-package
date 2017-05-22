@@ -1,12 +1,10 @@
-const BASE_URL = 'https://umnprimonotifications.blogspot.com/feeds/posts/default';
-
 class BloggerNotifications {
 
-  constructor($mdToast, $http, $document) {
+  constructor($mdToast, $http, $document, bloggerBaseUrl) {
     this._$mdToast = $mdToast;
     this._$http = $http;
     this._$document = $document;
-    this.url = BASE_URL + '?alt=json-in-script&callback=JSON_CALLBACK';
+    this.url = `${bloggerBaseUrl}/feeds/posts/default?alt=json-in-script`;
   }
 
   _showToast(msg) {
@@ -35,8 +33,9 @@ class BloggerNotifications {
   }
 
   show() {
-    this._$http.jsonp(this.url).success(data => {
-      let entry = data.feed.entry;
+    let params = {alt: 'json-in-script'};
+    this._$http.jsonp(this.url, {jsonpCallbackParam: 'callback'}).then(resp => {
+      let entry = resp.data.feed.entry;
       if (entry) {
         let title = entry[0].title.$t;
         let content = entry[0].content.$t;
@@ -47,7 +46,7 @@ class BloggerNotifications {
 
 }
 
-BloggerNotifications.$inject = ['$mdToast', '$http', '$document'];
+BloggerNotifications.$inject = ['$mdToast', '$http', '$document', 'bloggerBaseUrl'];
 
 export default BloggerNotifications;
 
