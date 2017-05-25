@@ -1,5 +1,3 @@
-.prm-primary-bg.prm-hue2, 
-prm-spinner.prm-hue2.overlay-cover.light-on-dark:after, 
-prm-search-bar.prm-hue2, md-backdrop.md-opaque {
+md-backdrop.md-opaque {
   background-color: #000;
 }
