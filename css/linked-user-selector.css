@@ -1,7 +1,7 @@
-prm-linked-user-selector {
-  margin-left: auto;
+ill-account-link {
+  padding-left: 1em;
 }
 
 ill-account-link .md-button {
-  background-color: #efefef;
+  vertical-align: middle;
 }

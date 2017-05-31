@@ -18,8 +18,8 @@ IllAccountLinkController.$inject = ['$window'];
 export default {
   controller: IllAccountLinkController,
   template: `
-            <md-button class="md-raised md-primary" ng-if="$ctrl.link" ng-href="{{$ctrl.link}}">
-            <md-tooltip>Sign in to you interlibrary loan accout</md-tooltip>
+            <md-button class="md-primary" ng-if="$ctrl.link" ng-href="{{$ctrl.link}}">
+              <md-tooltip>Sign in to you interlibrary loan accout</md-tooltip>
               My ILL Account
             </md-button>
             `
