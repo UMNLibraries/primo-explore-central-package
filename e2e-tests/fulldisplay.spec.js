@@ -40,4 +40,22 @@ describe('Full Display', () => {
     });
   });
 
+  describe('Tags service link', () => {
+    it('should be hidden', () => {
+      browser.get('fulldisplay?docid=UMN_ALMA21379779980001701&context=L&vid=TWINCITIES&lang=en_US');
+      expect(element(by.buttonText('Tags')).isDisplayed())
+        .toBeFalsy();
+    });
+  });
+
+  describe('Tags service', () => {
+    it('should be hidden', () => {
+      browser.get('fulldisplay?docid=UMN_ALMA21379779980001701&context=L&vid=TWINCITIES&lang=en_US');
+      expect(element(by.css('div#tags')).isDisplayed())
+        .toBeFalsy();
+    });
+  });
+
+
+
 });
