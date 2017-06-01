@@ -1,10 +1,11 @@
-const PARAM = '&req.skin=umn';
+const OLD_PARAM = '&req.skin=umn';
+const NEW_PARAM = '&req.skin=umn_nui';
 
-class RemoveAlmaSkinController {
+class ChangeAlmaSkinController {
   $onInit() {
     if (this.prmFullViewServiceContainerCtrl.isMashupLink()) {
       let oldUrl = this.link;
-      this.link = oldUrl.replace(PARAM, '');
+      this.link = oldUrl.replace(OLD_PARAM, NEW_PARAM);
     }
   }
 
@@ -18,9 +19,9 @@ class RemoveAlmaSkinController {
 
 }
 
-let RemoveAlmaSkin = {
+let ChangeAlmaSkin = {
   require: {prmFullViewServiceContainerCtrl: '^prmFullViewServiceContainer'},
-  controller: RemoveAlmaSkinController
+  controller: ChangeAlmaSkinController
 }
 
-export default RemoveAlmaSkin;
+export default ChangeAlmaSkin;
