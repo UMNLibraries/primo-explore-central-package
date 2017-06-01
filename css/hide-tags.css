@@ -1,4 +1,3 @@
 /* hide "tags" */
-a[aria-label="nui.mainmenu.label.tags"] {display: none !important;}
 button[aria-label="Tags"] {display: none;}
 div.full-view-section#tags {display: none;}
