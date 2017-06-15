@@ -1,0 +1,27 @@
+/* wrap overflow text in facets */
+prm-facet-exact .section-content .md-chips .md-chip .md-chip-content {
+  overflow: visible;
+  margin-bottom: 0.5em; 
+  width: 100%;
+  justify-content: space-between; 
+}
+prm-facet-exact .md-chips .md-chip {
+  line-height: normal;
+  height: auto; 
+}
+prm-facet-exact .md-chips .md-chip .md-chip-content strong {
+  white-space: normal; 
+  overflow: visible; 
+}
+prm-facet-exact .section-content .md-chips .md-chip .md-chip-remove-container {
+  height: 28px; 
+}
+/*
+prm-facet-exact .section-content .md-chips .md-chip strong+span {
+  align-items: center;
+}
+*/
+
+prm-facet .sidebar-inner-wrapper {
+  margin-right: 0;
+}
