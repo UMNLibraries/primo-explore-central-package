@@ -5,7 +5,7 @@ import HidePcAvailability from './hide-pc-availability.component'
 
 export default angular
   .module('prmAfterComponents', [
-    HathiTrustAvailability
+    HathiTrustAvailability,
   ]) 
   .component('pubmedLinkFix', PubmedLinkFix)
   .component('hidePcAvailability', HidePcAvailability)
