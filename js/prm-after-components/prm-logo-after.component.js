@@ -3,10 +3,6 @@ class PrmLogoAfterController {
     this._$window = $window;
   }
 
-  $onInit() {
-    console.log(this);
-  }
-
   get campus() {
     return this._$window.appConfig['primo-view']['institution']['institution-code'];
   }
