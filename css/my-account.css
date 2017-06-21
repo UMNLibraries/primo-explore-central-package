@@ -14,3 +14,11 @@ prm-account-links md-icon {
 span[translate='nui.details.patronstatus.group'] {
   display: none;
 }
+
+/* hide letter options */
+prm-account-overview div[ng-if="$ctrl.showActionSection()"] {
+  display: none;
+}
+prm-account-overview md-divder[ng-if="$ctrl.showActionSection()"] {
+  display: none;
+}
