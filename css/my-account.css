@@ -9,3 +9,8 @@ prm-account-links md-icon {
   min-width: 15px;
   margin-left: .2em;
 }
+
+/* hide user group */
+span[translate='nui.details.patronstatus.group'] {
+  display: none;
+}
