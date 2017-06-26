@@ -23,7 +23,7 @@ class PrmLoansOverviewAfterController {
   constructor($window, $scope, $compile, $element) {
     this._$scope = $scope;
     this.institution = $window.appConfig['primo-view']['institution']['institution-code'];
-    this._illTile = $compile(ILL_TEMPLATE)($scope);
+    this.illTile = $compile(ILL_TEMPLATE)($scope);
     this.accoutOverviewGrid = $element.parent().parent();
   }
 
@@ -34,12 +34,12 @@ class PrmLoansOverviewAfterController {
       return null;
   }
 
-  appendIllTileWhenReady() {
-    let unbindWatcher = this._$scope.$watch('$ctrl.accoutOverviewGrid', 
+  appendIllTileToAccountOverview() {
+    let unbindWatch = this._$scope.$watch('$ctrl.accoutOverviewGrid', 
       accountOverviewGrid => {
         if (accountOverviewGrid) {
-          accountOverviewGrid.append(this._illTile);
-          unbindWatcher();
+          accountOverviewGrid.append(this.illTile);
+          unbindWatch();
         } 
       }
     );
@@ -47,7 +47,7 @@ class PrmLoansOverviewAfterController {
 
   $postLink() {
     if (this.illAccountLink) {
-      this.appendIllTileWhenReady();
+      this.appendIllTileToAccountOverview();
     }
   }
 }
