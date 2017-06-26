@@ -4,6 +4,8 @@ import PubmedLinkFix from './pubmeb-fix.component';
 import HidePcAvailability from './hide-pc-availability.component';
 import PrmLogoAfter from './prm-logo-after.component';
 import PrmLoansOverviewAfter from './prm-loans-overview-after.component';
+import PrmSearchResultListAfter from './prm-search-result-list-after.component'
+
 
 export default angular
   .module('prmAfterComponents', [
@@ -14,6 +16,7 @@ export default angular
   .component('changeAlmaSkin', ChangeAlmaSkin)
   .component('prmLogoAfter', PrmLogoAfter)
   .component('prmLoansOverviewAfter', PrmLoansOverviewAfter)
+  .component('prmSearchResultListAfter', PrmSearchResultListAfter)
   .component('prmServiceLinksAfter', {
     template: '<pubmed-link-fix></pubmed-link-fix>'
   })
