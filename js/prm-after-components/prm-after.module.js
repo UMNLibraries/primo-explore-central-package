@@ -3,7 +3,7 @@ import ChangeAlmaSkin from './change-alma-skin.component';
 import PubmedLinkFix from './pubmeb-fix.component';
 import HidePcAvailability from './hide-pc-availability.component';
 import PrmLogoAfter from './prm-logo-after.component';
-import InjectIllAccountOverview from './inject-ill-account-overview.component';
+import PrmLoansOverviewAfter from './prm-loans-overview-after.component';
 
 export default angular
   .module('prmAfterComponents', [
@@ -13,7 +13,7 @@ export default angular
   .component('hidePcAvailability', HidePcAvailability)
   .component('changeAlmaSkin', ChangeAlmaSkin)
   .component('prmLogoAfter', PrmLogoAfter)
-  .component('injectIllAccountOverview', InjectIllAccountOverview)
+  .component('prmLoansOverviewAfter', PrmLoansOverviewAfter)
   .component('prmServiceLinksAfter', {
     template: '<pubmed-link-fix></pubmed-link-fix>'
   })
@@ -25,8 +25,5 @@ export default angular
   })
   .component('prmFullViewServiceContainerAfter', {
     template: '<change-alma-skin></remove-alma-skin>'
-  })
-  .component('prmAccountOverviewAfter', {
-    template: '<inject-ill-account-overview>'
   })
   .name;
