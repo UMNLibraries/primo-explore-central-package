@@ -5,7 +5,7 @@ class PrmUserAreaAfterController {
   }
 
   isGuest() {
-    this.parentCtrl.isGuest();
+    return this.parentCtrl.userSessionManagerService.isGuest();
   }
 
   $postLink() {
