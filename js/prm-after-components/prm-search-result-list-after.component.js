@@ -1,8 +1,4 @@
 class PrmSearchResultListAfterController {
-  $onInit() {
-    console.log(this);
-  }
-
   get show() {
     return (this.vid === 'TWINCITIES' && !this.searchInProgress);
   }
