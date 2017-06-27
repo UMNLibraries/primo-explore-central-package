@@ -4,6 +4,5 @@ prm-search-result-list .list-spacer {
 }
 
 prm-search-result-list-after md-card {
-  margin-right: 0;
-  margin-left: 0;
+  margin: 10px 0 100px 0;
 }
