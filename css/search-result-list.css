@@ -1,3 +1,4 @@
+/* collapse the spacing above the "haven't found card */
 prm-search-result-list .list-spacer {
-  min-height: inital;
+  min-height: initial;
 }
