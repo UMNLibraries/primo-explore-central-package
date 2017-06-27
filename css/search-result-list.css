@@ -2,3 +2,8 @@
 prm-search-result-list .list-spacer {
   min-height: initial;
 }
+
+prm-search-result-list-after md-card {
+  margin-right: 0;
+  margin-left: 0;
+}
