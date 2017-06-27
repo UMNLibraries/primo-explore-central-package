@@ -1,3 +1,7 @@
 prm-topbar a.md-button.button-over-dark {
   color: hsla(0,0%,100%,.85);
 }
+
+prm-user-area .user-menu-button .user-name {
+  color: #f5be23;
+}
