@@ -13,7 +13,7 @@ class PrmUserAreaAfterController {
       let unbindWatch = this._$scope.$watch('$ctrl.userNameElements', 
         userNameElements => {
           if (userNameElements) {
-            Array.from(userNameElements).map(element => element.textContent = 'Sign in');
+            Array.from(userNameElements).forEach(element => element.textContent = 'Sign in');
             unbindWatch();
           }
         }
