@@ -11,7 +11,7 @@ const ILL_TEMPLATE = `
       <div layout="column" layout-align="center center">
         <md-button class="button-link md-primoExplore-theme md-ink-ripple" ng-href="{{$ctrl.illAccountLink}}" target="_blank">
           My ILL Account
-          <md-tooltip>Sign in to you interlibrary loan accout</md-tooltip>
+          <md-tooltip>Sign in to your interlibrary loan account</md-tooltip>
           <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
         </md-button>
       </div>
