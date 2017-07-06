@@ -26,7 +26,6 @@
   },
   "scripts": {
     "test-unit": "karma start --singleRun",
-    "test-e2e": "protractor e2e-tests/protractor.conf",
-    "webdriver": "webdriver-manager update && webdriver-manager start"
+    "test-e2e": "protractor e2e-tests/protractor.conf"
   }
 }
