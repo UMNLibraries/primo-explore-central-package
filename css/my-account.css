@@ -10,8 +10,8 @@ prm-account-links md-icon {
   margin-left: .2em;
 }
 
-/* hide user group */
-span[translate='nui.details.patronstatus.group'] {
+/* hide group and expire date */
+prm-personal-info div.header-subtitle {
   display: none;
 }
 
