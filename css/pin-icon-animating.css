@@ -1,1 +1,3 @@
 .pinDummy prm-icon {color: #809FA6;}
+.pinDummy:before {background-color: #f5be23;}
+prm-search-bookmark-filter #favorites-button:before {background-color: #f5be23;} 
