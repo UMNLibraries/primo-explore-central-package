@@ -1,6 +1,12 @@
 class PrmSearchResultListAfterController {
-  get show() {
-    return (this.vid === 'TWINCITIES' && !this.searchInProgress);
+  constructor($location) {
+    this._$location = $location;
+  }
+
+  get visible() {
+    return (this.vid === 'TWINCITIES' 
+        &&  this.onSearchPage
+        && !this.searchInProgress);
   }
 
   get vid() {
@@ -8,6 +14,11 @@ class PrmSearchResultListAfterController {
                .briefResultService
                .userSessionManagerService
                .vid;
+  }
+
+  get onSearchPage() {
+    return (this._$location.path() === '/search' 
+         || this._$location.path() === '/jsearch');
   }
 
   get searchInProgress() {
@@ -24,7 +35,7 @@ export default {
   require: {prmSearchResultListCtrl: '^prmSearchResultList'},
   controller: PrmSearchResultListAfterController, 
   template: `
-    <md-card ng-if='$ctrl.show' class="default-card _md md-primoExplore-theme" prm-text="" dir="auto">
+    <md-card ng-if='$ctrl.visible' class="default-card _md md-primoExplore-theme" prm-text="" dir="auto">
       <md-card-title>
         <md-card-title-text>
            <span class="md-headline">Haven't found what you're looking for?</span>       
@@ -39,5 +50,4 @@ export default {
       </md-card-content>
     </md-card>
   `
-
 }
