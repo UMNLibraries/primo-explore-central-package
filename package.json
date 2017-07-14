@@ -19,11 +19,10 @@
     "karma-jasmine": "^1.0.2",
     "karma-jasmine-jquery": "^0.1.1",
     "karma-spec-reporter": "0.0.31",
+    "primo-explore-hathitrust-availability": "^2.2.1",
     "protractor": "latest"
   },
-  "dependencies": {
-    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v2.2.1"
-  },
+  "dependencies": {},
   "scripts": {
     "test-unit": "karma start --singleRun",
     "test-e2e": "protractor e2e-tests/protractor.conf"
