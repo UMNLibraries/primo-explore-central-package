@@ -22,7 +22,7 @@
     "protractor": "latest"
   },
   "dependencies": {
-    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v2.1.4"
+    "primo-explore-hathitrust-availability": "git+ssh://git@github.umn.edu:gpeterso/primo-explore-hathitrust-availability.git#v2.2.1"
   },
   "scripts": {
     "test-unit": "karma start --singleRun",
