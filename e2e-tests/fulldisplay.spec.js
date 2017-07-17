@@ -56,6 +56,4 @@ describe('Full Display', () => {
     });
   });
 
-
-
 });
