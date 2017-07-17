@@ -5,7 +5,8 @@ module.exports = {
         "node": true, 
         "jasmine": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended",
+                "plugin:protractor/recommended"],
     "parserOptions": {
         "sourceType": "module"
     },
@@ -34,6 +35,7 @@ module.exports = {
     },
     "plugins": [
         "jasmine", 
+        "protractor",
         "angular"
     ]
 };
