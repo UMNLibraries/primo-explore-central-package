@@ -18,8 +18,7 @@ class PrmUserAreaAfterController {
         Array.from(userNameElements).forEach(element => element.textContent = 'Sign in');
         unbindWatch();
       }
-    }
-    );
+    });
   }
 
   $postLink() {
