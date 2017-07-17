@@ -1,23 +1,30 @@
 class PrmUserAreaAfterController {
-  constructor($scope, $element) {
+
+  constructor($scope) {
     this._$scope = $scope;
-    this.userNameElements = $element.parent()[0].getElementsByClassName('user-name');
   }
 
-  isGuest() {
+  get isGuest() {
     return this.parentCtrl.userSessionManagerService.isGuest();
   }
 
+  _updateUserNameWhenAvailable() {
+    let findUserNameElements = ()=> {
+      let userNameElements = document.getElementsByClassName('user-name');
+      return (userNameElements && userNameElements.length > 0) ? userNameElements : null;
+    };
+    let unbindWatch = this._$scope.$watch(findUserNameElements, userNameElements => {
+      if (userNameElements) {
+        Array.from(userNameElements).forEach(element => element.textContent = 'Sign in');
+        unbindWatch();
+      }
+    }
+    );
+  }
+
   $postLink() {
-    if (this.isGuest()) {
-      let unbindWatch = this._$scope.$watch('$ctrl.userNameElements', 
-        userNameElements => {
-          if (userNameElements) {
-            Array.from(userNameElements).forEach(element => element.textContent = 'Sign in');
-            unbindWatch();
-          }
-        }
-      );
+    if (this.isGuest) {
+      this._updateUserNameWhenAvailable();
     }
   }
 
@@ -26,4 +33,4 @@ class PrmUserAreaAfterController {
 export default {
   bindings: {parentCtrl: '<'},
   controller: PrmUserAreaAfterController 
-}
+};
