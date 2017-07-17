@@ -8,7 +8,6 @@ import PrmSearchResultListAfter from './prm-search-result-list-after.component';
 import PrmUserAreaAfter from './prm-user-area-after.component';
 import PrmSearchBookMarkmarkFilterAfter from './prm-search-bookmark-filter-after.component';
 
-
 export default angular
   .module('prmAfterComponents', [
     HathiTrustAvailability,

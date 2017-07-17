@@ -17,7 +17,7 @@ const ILL_TEMPLATE = `
       </div>
     </div>
   </div>
-`
+`;
 
 class PrmLoansOverviewAfterController {
   constructor($window, $scope, $compile, $element) {
@@ -54,5 +54,4 @@ class PrmLoansOverviewAfterController {
 
 export default {
   controller: PrmLoansOverviewAfterController
-}
-
+};

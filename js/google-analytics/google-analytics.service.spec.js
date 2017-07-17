@@ -1,11 +1,11 @@
 
 describe('GoogleAnalytics Service', () => {
 
-  let $rootScope, $location, $window;
+  let $rootScope, $location, $window, googleAnalyticsService;
 
   beforeEach(angular.mock.module('googleAnalytics'));
 
-  beforeEach(inject($injector => {
+  beforeEach(angular.mock.inject($injector => {
     $rootScope = $injector.get('$rootScope');
     $location = $injector.get('$location');
     $window = $injector.get('$window');
@@ -28,7 +28,7 @@ describe('GoogleAnalytics Service', () => {
   });
 
   it('should record pageview events when the location changes', () => {
-    let url = "/foo";
+    let url = '/foo';
     $location.url(url);
     spyOn($window, 'ga');
     googleAnalyticsService.trackPageviews();

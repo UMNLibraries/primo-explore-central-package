@@ -2,10 +2,10 @@
 function lookupOtool() {
   let inst = window.appConfig['primo-view']['institution']['institution-code'];
   let otools = {
-    TWINCITIES: "umnbmlib",
-    DULUTH: "umndlib",
-    CROOKSTON: "mnumclib"
-  }
+    TWINCITIES: 'umnbmlib',
+    DULUTH: 'umndlib',
+    CROOKSTON: 'mnumclib'
+  };
   return otools[inst] || null;
 }
 
@@ -17,7 +17,7 @@ function fixPubmedLinks(links) {
   let otool = lookupOtool();
   for (let i=0; i < links.length; i++) {
     if (otool && isPubmedUrl(links[i].linkURL)) {
-      links[i].linkURL += "?otool=" + otool;
+      links[i].linkURL += '?otool=' + otool;
     }
   }
 }

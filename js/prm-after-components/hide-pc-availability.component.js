@@ -7,6 +7,6 @@ class HidePcAvailabilityController {
 let HidePcAvailability = {
   require: {prmFacetCtrl: '^prmFacet'},
   controller: HidePcAvailabilityController
-}
+};
 
 export default HidePcAvailability;

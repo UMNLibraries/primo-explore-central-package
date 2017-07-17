@@ -23,9 +23,10 @@ class BloggerNotifications {
       },
       controller: class {
         close() {
-          this.$mdToast.hide()
+          this.$mdToast.hide();
+          // eslint-disable-next-line no-undef
           notificationService._markNotificationAsRead();
-        };
+        }
       },       
       template: `<md-toast class="blogger-notification">
                   <span class="md-toast-text" flex>{{ctrl.msg}}</span>

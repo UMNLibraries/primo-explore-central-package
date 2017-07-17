@@ -8,7 +8,7 @@ export default angular
   .constant('bloggerBaseUrl', BASE_URL)
   .config(['$sceDelegateProvider', 'bloggerBaseUrl', ($sceDelegateProvider, bloggerBaseUrl) => {
     let urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
-    urlWhitelist.push(`${bloggerBaseUrl}**`)
+    urlWhitelist.push(`${bloggerBaseUrl}**`);
     $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
   }])
   .run(['bloggerNotifications', bloggerNotifications => bloggerNotifications.show()])

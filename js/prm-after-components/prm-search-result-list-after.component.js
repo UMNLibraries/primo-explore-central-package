@@ -10,10 +10,11 @@ class PrmSearchResultListAfterController {
   }
 
   get vid() {
-    return this.prmSearchResultListCtrl
-               .briefResultService
-               .userSessionManagerService
-               .vid;
+    return this
+      .prmSearchResultListCtrl
+      .briefResultService
+      .userSessionManagerService
+      .vid;
   }
 
   get onSearchPage() {
@@ -50,4 +51,4 @@ export default {
       </md-card-content>
     </md-card>
   `
-}
+};

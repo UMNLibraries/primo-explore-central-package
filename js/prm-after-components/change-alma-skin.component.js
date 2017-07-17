@@ -22,6 +22,6 @@ class ChangeAlmaSkinController {
 let ChangeAlmaSkin = {
   require: {prmFullViewServiceContainerCtrl: '^prmFullViewServiceContainer'},
   controller: ChangeAlmaSkinController
-}
+};
 
 export default ChangeAlmaSkin;
