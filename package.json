@@ -28,7 +28,9 @@
   },
   "dependencies": {},
   "scripts": {
+    "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu'",
     "test-unit": "karma start --singleRun",
-    "test-e2e": "protractor e2e-tests/protractor.conf"
+    "test-e2e": "protractor e2e-tests/protractor.conf",
+    "pkg": "gulp create-package"
   }
 }
