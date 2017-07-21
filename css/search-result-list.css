@@ -9,7 +9,6 @@ prm-search-result-list-after md-card {
 
 /* chat dialog */
 md-dialog.qpoint-chat {
-  overflow: hidden;
 }
 md-dialog-content.qpoint-chat {
   width: 340px;
