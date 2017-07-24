@@ -46,7 +46,7 @@ class PrmSearchResultListAfterController {
       },
       template: `<md-dialog class='qpoint-chat'>
                   <md-dialog-content class='qpoint-chat'>
-                  <iframe src='https://www.questionpoint.org/crs/qwidgetV4/patronChatQwidget.jsp?langcode=1&instid=12947&skin=gray&size=fill&customSkin=https%3A%2F%2Fprimo-test.lib.umn.edu%2Fprimo_library%2Flibweb%2Fumn%2Fcss%2Fqpoint-chat.css' height='100%' width='100%'></iframe>
+                  <iframe src='https://www.questionpoint.org/crs/qwidgetV4/patronChatQwidget.jsp?langcode=1&instid=12947&skin=gray&size=fill&customSkin=https%3A%2F%2Fprimo.lib.umn.edu%2Fprimo_library%2Flibweb%2Fumn%2Fcss%2Fqpoint-chat.css' height='100%' width='100%'></iframe>
                   </md-dialog-content>
                   <md-dialog-actions>
                     <md-button ng-click='$ctrl.close()'>Close</md-button>
