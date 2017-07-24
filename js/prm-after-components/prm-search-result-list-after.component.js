@@ -69,9 +69,10 @@ export default {
       <md-card-content>
         <ul>
           <li><a ng-click='$ctrl.showChatDialog()' href=''>Chat with library staff 24/7</a></li>
-          <li>Use our <a href='https://umn.illiad.oclc.org/illiad/logon.html'> interlibrary loan service</a> to request it from another library.</li>
-          <li>Try searching <a href='http://www.worldcat.org/search?q={{$ctrl.searchString}}'>WorldCat®</a>, <a href='http://www.lib.umn.edu/slog.phtml?url=http://scholar.google.com/scholar?q={{$ctrl.searchString}}'>Google™ Scholar</a>, or the <a href='https://lib.umn.edu'>Libraries Home Page</a>.</li> 
-          <li><a href='https://www.lib.umn.edu/help'>Ask us</a> for assistance.</li>
+          <li>Use <a href='https://umn.illiad.oclc.org/illiad/logon.html'> interlibrary loan</a> to request it from another library</li>
+          <li>Try searching <a href='http://www.worldcat.org/search?q={{$ctrl.searchString}}'>WorldCat®</a>, <a href='http://www.lib.umn.edu/slog.phtml?url=http://scholar.google.com/scholar?q={{$ctrl.searchString}}'>Google™ Scholar</a>, or the <a href='https://lib.umn.edu'>Libraries Home Page</a></li> 
+          <li><a href='https://docs.google.com/a/umn.edu/forms/d/e/1FAIpQLScBdqhb16ISFeJxIFCoiyhZMjlP_31PkU8XNeDW9QXf1GZPJQ/viewform'>Request a consultation</a> with a librarian</li>
+          <li>Start your search with one of our <a href='https://www.lib.umn.edu/subjects/'>Subject Guides</a></li>
         </ul>
       </md-card-content>
     </md-card>
