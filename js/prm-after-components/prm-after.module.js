@@ -8,6 +8,7 @@ import PrmSearchResultListAfter from './prm-search-result-list-after.component';
 import PrmUserAreaAfter from './prm-user-area-after.component';
 import PrmSearchBookMarkmarkFilterAfter from './prm-search-bookmark-filter-after.component';
 import PrmSearchBarAfter from './prm-search-bar-after.component';
+import PrmLibraryCardMenuAfter from './prm-library-card-menu-after.component';
 
 export default angular
   .module('prmAfterComponents', [
@@ -22,6 +23,7 @@ export default angular
   .component('prmUserAreaAfter', PrmUserAreaAfter)
   .component('prmSearchBookmarkFilterAfter', PrmSearchBookMarkmarkFilterAfter)
   .component('prmSearchBarAfter', PrmSearchBarAfter)
+  .component('prmLibraryCardMenuAfter', PrmLibraryCardMenuAfter)
   .component('prmServiceLinksAfter', {
     template: '<pubmed-link-fix></pubmed-link-fix>'
   })
