@@ -6,15 +6,3 @@ prm-search-result-list .list-spacer {
 prm-search-result-list-after md-card {
   margin: 10px 0 100px 0;
 }
-
-/* chat dialog */
-md-dialog.qpoint-chat {
-}
-md-dialog-content.qpoint-chat {
-  width: 340px;
-  height: 300px;
-  /*margin-right: -16px;*/
-}
-md-dialog-content.qpoint-chat iframe {
-  border: none;
-}
