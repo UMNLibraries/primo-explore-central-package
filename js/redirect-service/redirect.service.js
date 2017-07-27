@@ -5,13 +5,13 @@
  * consistent deep links to this page. The default behavior can vary
  * depending on whether the user has a new, exiting, or expired session.
  */
-
 class Redirect {
-  constructor($location, $window, $state, SessionTimeoutService, $timeout) {
+  constructor($location, $window, $state, $timeout, $translate, SessionTimeoutService) {
     this.$location = $location; 
     this.$state = $state;
     this.$window = $window;
     this.$timeout = $timeout;
+    this.$translate = $translate;
     this.SessionTimeoutService = SessionTimeoutService;
   }
 
@@ -26,6 +26,10 @@ class Redirect {
 
   get vid() {
     return this.$window.appConfig.vid;
+  }
+
+  get lang() {
+    return this.$translate.use();
   }
 
   redirectRequested() {
@@ -50,6 +54,13 @@ class Redirect {
   }
 }
 
-Redirect.$inject = ['$location', '$window', '$state', 'SessionTimeoutService', '$timeout'];
+Redirect.$inject = [
+  '$location', 
+  '$window', 
+  '$state', 
+  '$timeout',
+  '$translate',
+  'SessionTimeoutService',
+];
 
 export default Redirect;
