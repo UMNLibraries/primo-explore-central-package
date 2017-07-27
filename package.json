@@ -31,6 +31,7 @@
     "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu'",
     "test-unit": "karma start --singleRun",
     "test-e2e": "protractor e2e-tests/protractor.conf",
-    "pkg": "gulp create-package"
+    "pkg": "gulp create-package",
+    "webdriver-update": "webdriver-manager update"
   }
 }
