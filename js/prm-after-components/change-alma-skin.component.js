@@ -5,7 +5,9 @@ class ChangeAlmaSkinController {
   $onInit() {
     if (this.prmFullViewServiceContainerCtrl.isMashupLink()) {
       let oldUrl = this.link;
-      this.link = oldUrl.replace(OLD_PARAM, NEW_PARAM);
+      if (!oldUrl.includes(NEW_PARAM)) {
+        this.link = oldUrl.replace(OLD_PARAM, NEW_PARAM);
+      }
     }
   }
 
