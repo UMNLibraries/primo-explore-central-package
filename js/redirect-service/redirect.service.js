@@ -49,9 +49,6 @@ class Redirect {
     });
   }
 
-  reloadPage() {
-    this.$window.location.reload();
-  }
 }
 
 Redirect.$inject = [
