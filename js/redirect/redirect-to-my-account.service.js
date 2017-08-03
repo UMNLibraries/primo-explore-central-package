@@ -5,7 +5,7 @@
  * consistent deep links to this page. The default behavior can vary
  * depending on whether the user has a new, exiting, or expired session.
  */
-class Redirect {
+class RedirectToMyAccount {
   constructor($location, $window, $state, $timeout, $translate, SessionTimeoutService) {
     this.$location = $location; 
     this.$state = $state;
@@ -51,7 +51,7 @@ class Redirect {
 
 }
 
-Redirect.$inject = [
+RedirectToMyAccount.$inject = [
   '$location', 
   '$window', 
   '$state', 
@@ -60,4 +60,4 @@ Redirect.$inject = [
   'SessionTimeoutService',
 ];
 
-export default Redirect;
+export default RedirectToMyAccount;
