@@ -51,7 +51,6 @@ class BloggerNotifications {
   }
 
   show() {
-    let params = {alt: 'json-in-script'};
     this._$http.jsonp(this.url, {jsonpCallbackParam: 'callback'}).then(resp => {
       let entry = resp.data.feed.entry;
       if (entry) {
