@@ -1,4 +1,15 @@
 describe('Full Display', () => {
+
+  describe('Permalink', () => {
+    it('should not contain "isFrbr" with FRBR records', () => {
+      browser.get('fulldisplay?docid=UMN_ALMA21519037670001701&isFrbr=true&context=L&vid=TWINCITIES&lang=en_US');
+      let button = element(by.css('span[translate="fulldisplay.command.permalink"]'));
+      button.click();
+      let permalink = element(by.css('prm-permalink span[id^="permalink"]'));
+      expect(permalink.getText()).not.toContain('isFrbr');
+    });
+  });
+
   describe('Pubmed Links', () => {
     it('should contain the "umnbmlib" otool parameter in the TWINCITIES view', () => {
       browser.get('fulldisplay?docid=TN_medline21798953&context=PC&lang=en_US&vid=TWINCITIES');
@@ -55,5 +66,6 @@ describe('Full Display', () => {
         .toBeFalsy();
     });
   });
+
 
 });
