@@ -1,6 +1,12 @@
 class HidePcAvailabilityController {
+  constructor($location) {
+    this.$location = $location;
+  }
+
   $onInit() {
-    this.prmFacetCtrl.showPcAvailability = false;
+    if (this.$location.search()['showExpand'] !== 'true') {
+      this.prmFacetCtrl.showPcAvailability = false;
+    }
   }
 }
 
@@ -8,5 +14,7 @@ let HidePcAvailability = {
   require: {prmFacetCtrl: '^prmFacet'},
   controller: HidePcAvailabilityController
 };
+
+HidePcAvailability.$inject = ['$location'];
 
 export default HidePcAvailability;
