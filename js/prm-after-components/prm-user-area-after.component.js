@@ -29,6 +29,8 @@ class PrmUserAreaAfterController {
 
 }
 
+PrmUserAreaAfterController.$inject = ['$scope'];
+
 export default {
   bindings: {parentCtrl: '<'},
   controller: PrmUserAreaAfterController 

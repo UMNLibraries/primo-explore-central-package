@@ -52,6 +52,8 @@ class PrmLoansOverviewAfterController {
   }
 }
 
+PrmLoansOverviewAfterController.$inject = ['$window', '$scope', '$compile', '$element'];
+
 export default {
   controller: PrmLoansOverviewAfterController
 };
