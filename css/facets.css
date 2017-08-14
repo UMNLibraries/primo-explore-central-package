@@ -3,7 +3,6 @@ prm-facet-exact .section-content .md-chips .md-chip .md-chip-content {
   overflow: visible;
   margin-bottom: 0.5em; 
   width: 100%;
-  justify-content: space-between; 
 }
 prm-facet-exact .md-chips .md-chip {
   line-height: normal;
@@ -16,12 +15,49 @@ prm-facet-exact .md-chips .md-chip .md-chip-content strong {
 prm-facet-exact .section-content .md-chips .md-chip .md-chip-remove-container {
   height: 28px; 
 }
-/*
 prm-facet-exact .section-content .md-chips .md-chip strong+span {
-  align-items: center;
+  margin-left: auto;
 }
-*/
 
 prm-facet .sidebar-inner-wrapper {
   margin-right: 0;
 }
+
+
+/*
+
+prm-facet-exact .section-content .md-chips .md-chip strong+span {
+  flex-basis: 100%;
+  margin-left: .25em;
+}
+
+.section-content .md-chips .md-chip .facet-title {
+  flex-basis: 0; 
+  flex-grow: 2;
+  margin-right: 0;
+}
+
+prm-facet-exact .section-content .md-chips .md-chip .md-chip-content {
+  flex-wrap: wrap;
+  padding-left: 0;
+  flex-direction: row-reverse;
+  position: initial; 
+  left: 0;
+}
+
+.multiselect-facet-group .md-chip .md-chip-content md-checkbox {
+  align-self: flex-start;
+  left: 4px;
+}
+
+
+.multiselect-facet-group .md-chip .md-chip-remove-container {
+  position: initial; 
+  left: 0;
+}
+
+
+.available-facets .section-content .md-chips .md-chip .md-chip-content:focus+.md-chip-remove-container .md-button, .available-facets .section-content .md-chips .md-chip.md-chip-remove-container .md-button:focus .md-button, .available-facets .section-content .md-chips .md-chip.md-chip-remove-container:focus .md-button, .available-facets .section-content .md-chips .md-chip:focus .md-button, .available-facets .section-content .md-chips .md-chip:hover .md-button {
+  top: -5px;
+}
+*/
