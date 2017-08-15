@@ -9,6 +9,7 @@ import PrmUserAreaAfter from './prm-user-area-after.component';
 import PrmSearchBookMarkmarkFilterAfter from './prm-search-bookmark-filter-after.component';
 import PrmSearchBarAfter from './prm-search-bar-after.component';
 import PrmPermalinkAfter from './prm-permalink-after.component';
+import UpdatePermalink from './update-permalink.component';
 
 export default angular
   .module('prmAfterComponents', [
@@ -24,6 +25,7 @@ export default angular
   .component('prmSearchBookmarkFilterAfter', PrmSearchBookMarkmarkFilterAfter)
   .component('prmSearchBarAfter', PrmSearchBarAfter)
   .component('prmPermalinkAfter', PrmPermalinkAfter)
+  .component('updatePermalink', UpdatePermalink)
   .component('prmServiceLinksAfter', {
     template: '<pubmed-link-fix></pubmed-link-fix>'
   })
