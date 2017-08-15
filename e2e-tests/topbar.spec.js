@@ -1,6 +1,8 @@
 describe('Top Bar', () => {
 
-  browser.get('search?vid=TWINCITIES&lang=en_US');
+  beforeEach(() => {
+    browser.get('search?vid=TWINCITIES&lang=en_US');
+  });
 
   describe('Tags link', () => {
     it('should not be present', () => {
