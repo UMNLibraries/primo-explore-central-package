@@ -5,7 +5,6 @@ import HidePcAvailability from './hide-pc-availability.component';
 import PrmLogoAfter from './prm-logo-after.component';
 import PrmLoansOverviewAfter from './prm-loans-overview-after.component';
 import PrmSearchResultListAfter from './prm-search-result-list-after.component';
-import PrmUserAreaAfter from './prm-user-area-after.component';
 import PrmSearchBookMarkmarkFilterAfter from './prm-search-bookmark-filter-after.component';
 import PrmSearchBarAfter from './prm-search-bar-after.component';
 import PrmPermalinkAfter from './prm-permalink-after.component';
@@ -21,7 +20,6 @@ export default angular
   .component('prmLogoAfter', PrmLogoAfter)
   .component('prmLoansOverviewAfter', PrmLoansOverviewAfter)
   .component('prmSearchResultListAfter', PrmSearchResultListAfter)
-  .component('prmUserAreaAfter', PrmUserAreaAfter)
   .component('prmSearchBookmarkFilterAfter', PrmSearchBookMarkmarkFilterAfter)
   .component('prmSearchBarAfter', PrmSearchBarAfter)
   .component('prmPermalinkAfter', PrmPermalinkAfter)
