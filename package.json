@@ -35,9 +35,11 @@
   "dependencies": {},
   "scripts": {
     "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu'",
+    "start-prod": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo.lib.umn.edu'",
     "test-unit": "karma start --singleRun",
     "test-e2e": "protractor e2e-tests/protractor.conf",
     "pkg": "gulp create-package",
-    "webdriver-update": "webdriver-manager update"
+    "webdriver-update": "webdriver-manager update",
+    "gen-color-scheme": "gulp app-css --view CENTRAL_PACKAGE --proxy 'https://primo-test.lib.umn.edu'" 
   }
 }
