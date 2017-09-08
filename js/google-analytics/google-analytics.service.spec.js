@@ -36,4 +36,10 @@ describe('GoogleAnalytics Service', () => {
     expect($window.ga).toHaveBeenCalledWith('send', 'pageview', {location: url});
   });
 
+  it('should forward event tracking data to GA', () => {
+    spyOn($window, 'ga');
+    googleAnalyticsService.trackEvent('Links', 'My Link Click');
+    expect($window.ga).toHaveBeenCalledWith('send', 'event', 'Links', 'My Link Click', undefined);
+  });
+
 });

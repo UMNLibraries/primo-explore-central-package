@@ -48,6 +48,10 @@ class GoogleAnalytics {
     });
   }
 
+  trackEvent(category, action, label) {
+    this._$window.ga('send', 'event', category, action, label);
+  }
+
 }
 
 GoogleAnalytics.$inject = ['$rootScope', '$location', '$window'];
