@@ -1,3 +1,4 @@
+const PROXY_PREFIX = 'http://login.ezproxy.lib.umn.edu/login?auth=shibboleth&url=';
 
 function lookupOtool() {
   let inst = window.appConfig['primo-view']['institution']['institution-code'];
@@ -16,8 +17,11 @@ function isPubmedUrl(url) {
 function fixPubmedLinks(links) {
   let otool = lookupOtool();
   for (let i=0; i < links.length; i++) {
-    if (otool && isPubmedUrl(links[i].linkURL)) {
-      links[i].linkURL += '?otool=' + otool;
+    let url = links[i].linkURL;
+    if (otool && isPubmedUrl(url)) {
+      if (url.startsWith(PROXY_PREFIX)) url = url.substring(PROXY_PREFIX.length); 
+      url += '?otool=' + otool;
+      links[i].linkURL = url;
     }
   }
 }
