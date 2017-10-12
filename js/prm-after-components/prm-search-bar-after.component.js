@@ -1,6 +1,8 @@
 class PrmSearchBarAfterController {
   $onInit() {
-    if (this.parentCtrl.vid === 'TWINCITIES') this.parentCtrl.tabs = [];
+    if (this.parentCtrl.vid === 'TWINCITIES' || this.parentCtrl.vid === 'MORRIS') {
+      this.parentCtrl.tabs = [];
+    }
   }
 }
 
