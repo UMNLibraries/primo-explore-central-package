@@ -6,3 +6,12 @@ prm-search-result-list .list-spacer {
 prm-search-result-list-after md-card {
   margin: 10px 0 100px 0;
 }
+
+/* truncate long author lists in brief results */
+prm-search-result-list prm-brief-result div.item-detail span {
+  max-width: 30em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
