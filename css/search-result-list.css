@@ -8,10 +8,12 @@ prm-search-result-list-after md-card {
 }
 
 /* truncate long author lists in brief results */
-prm-search-result-list prm-brief-result div.item-detail span {
+prm-search-result-list prm-brief-result h3.item-title + div.item-detail > span:first-child {
   max-width: 30em;
-  overflow: hidden;
   white-space: nowrap;
+  display: inline-flex;
+}
+prm-search-result-list prm-brief-result h3.item-title + div.item-detail > span:first-child span:not(.media-delimiter) {
+  overflow: hidden;
   text-overflow: ellipsis;
-  display: inline-block;
 }
