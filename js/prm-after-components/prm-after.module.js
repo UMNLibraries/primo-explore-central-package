@@ -3,7 +3,6 @@ import ChangeAlmaSkin from './change-alma-skin.component';
 import PubmedLinkFix from './pubmeb-fix.component';
 import HidePcAvailability from './hide-pc-availability.component';
 import PrmLogoAfter from './prm-logo-after.component';
-import PrmLoansOverviewAfter from './prm-loans-overview-after.component';
 import PrmSearchResultListAfter from './prm-search-result-list-after.component';
 import PrmSearchBookMarkmarkFilterAfter from './prm-search-bookmark-filter-after.component';
 import PrmSearchBarAfter from './prm-search-bar-after.component';
@@ -18,7 +17,6 @@ export default angular
   .component('hidePcAvailability', HidePcAvailability)
   .component('changeAlmaSkin', ChangeAlmaSkin)
   .component('prmLogoAfter', PrmLogoAfter)
-  .component('prmLoansOverviewAfter', PrmLoansOverviewAfter)
   .component('prmSearchResultListAfter', PrmSearchResultListAfter)
   .component('prmSearchBookmarkFilterAfter', PrmSearchBookMarkmarkFilterAfter)
   .component('prmSearchBarAfter', PrmSearchBarAfter)
