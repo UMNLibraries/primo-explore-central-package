@@ -1,3 +1,5 @@
+import notificationTemplate from './blogger-notification.html';
+
 class BloggerNotifications {
 
   constructor($mdToast, $http, $document, bloggerBaseUrl, $cookies) {
@@ -28,13 +30,7 @@ class BloggerNotifications {
           notificationService._markNotificationAsRead();
         }
       },       
-      template: `<md-toast class="blogger-notification">
-                  <span class="md-toast-text" flex>{{ctrl.msg}}</span>
-                  <md-button class='md-icon-button' aria-label='Dismiss notification' ng-click="ctrl.close()">
-                    <md-icon md-svg-icon="navigation:ic_close_24px"><span>Dismiss</span></md-icon>
-                  <md-button>
-                </md-toast>`
-                
+      template: notificationTemplate
     }); 
   }
 

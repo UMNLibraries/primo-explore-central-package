@@ -1,4 +1,4 @@
-import illTemplate from './ill-template.html';
+import illTemplate from './ill-overview.html';
 
 class PrmLoansOverviewAfterController {
   constructor($window, $scope, $compile, $element) {

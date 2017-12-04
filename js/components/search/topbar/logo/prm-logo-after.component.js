@@ -1,3 +1,5 @@
+import template from './prm-logo-after.html';
+
 class PrmLogoAfterController {
   constructor($window, $location) {
     this._$window = $window;
@@ -34,13 +36,6 @@ PrmLogoAfterController.$inject = ['$window', '$location'];
 export default {
   bindings: {parentCtrl: '<'},
   controller: PrmLogoAfterController, 
-  template: `
-    <div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner" tabindex="0" role="banner">
-      <a ng-href="{{$ctrl.targetUrl}}" target="_top">
-        <img class="logo-image" alt="{{::('nui.header.LogoAlt' | translate)}}" ng-src="{{$ctrl.iconLink}}"/>
-      </a>
-      <div ng-if="$ctrl.isTestEnvironment" style="position:absolute; top:44px; left:17px; color:#f5be23;"><b>Test Environment</b></div>
-    </div>
-  `
+  template: template
 };
 

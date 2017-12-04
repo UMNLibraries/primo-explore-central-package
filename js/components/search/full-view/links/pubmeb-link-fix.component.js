@@ -39,4 +39,3 @@ let PubmedLinkFix = {
 };
 
 export default PubmedLinkFix;
-
