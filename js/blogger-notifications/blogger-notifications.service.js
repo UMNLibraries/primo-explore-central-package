@@ -3,23 +3,23 @@ import notificationTemplate from './blogger-notification.html';
 class BloggerNotifications {
 
   constructor($mdToast, $http, $document, bloggerBaseUrl, $cookies) {
-    this._$mdToast = $mdToast;
-    this._$http = $http;
-    this._$document = $document;
-    this._$cookies = $cookies;
+    this.$mdToast = $mdToast;
+    this.$http = $http;
+    this.$document = $document;
+    this.$cookies = $cookies;
     this.url = `${bloggerBaseUrl}/feeds/posts/default?alt=json-in-script`;
   }
 
-  _showToast(msg) {
-    this._$mdToast.show({
+  showToast(msg) {
+    this.$mdToast.show({
       controllerAs: 'ctrl',
       bindToController: true,
       autoWrap: false,
       position: 'top',
-      parent: this._$document[0].getElementsByTagName('html')[0],
+      parent: this.$document[0].getElementsByTagName('html')[0],
       hideDelay: 20000,
       locals: {
-        $mdToast: this._$mdToast, 
+        $mdToast: this.$mdToast, 
         notificationService: this,
         msg: msg
       },
@@ -34,27 +34,27 @@ class BloggerNotifications {
     }); 
   }
 
-  _markNotificationAsRead() {
+  markNotificationAsRead() {
     let cookieName = `unmnotification_${this.notificationTimestamp}`;
     let expireDate = new Date();
     expireDate.setDate(expireDate.getDate() + 1);
-    this._$cookies.put(cookieName, '1', {expires: expireDate});
+    this.$cookies.put(cookieName, '1', {expires: expireDate});
   }
 
-  _notificationIsUnread() {
+  notificationIsUnread() {
     let cookieName = `unmnotification_${this.notificationTimestamp}`;
-    return (this._$cookies.get(cookieName) !== '1');
+    return (this.$cookies.get(cookieName) !== '1');
   }
 
   show() {
-    this._$http.jsonp(this.url, {jsonpCallbackParam: 'callback'}).then(resp => {
+    this.$http.jsonp(this.url, {jsonpCallbackParam: 'callback'}).then(resp => {
       let entry = resp.data.feed.entry;
       if (entry) {
         let title = entry[0].title.$t;
         let content = entry[0].content.$t;
         this.notificationTimestamp = entry[0].updated.$t;
-        if (this._notificationIsUnread()) {
-          this._showToast(title + ': ' + content);
+        if (this.notificationIsUnread()) {
+          this.showToast(title + ': ' + content);
         }
       }  
     });
@@ -65,4 +65,3 @@ class BloggerNotifications {
 BloggerNotifications.$inject = ['$mdToast', '$http', '$document', 'bloggerBaseUrl', '$cookies'];
 
 export default BloggerNotifications;
-

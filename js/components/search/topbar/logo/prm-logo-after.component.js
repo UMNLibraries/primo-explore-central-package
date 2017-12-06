@@ -2,12 +2,12 @@ import template from './prm-logo-after.html';
 
 class PrmLogoAfterController {
   constructor($window, $location) {
-    this._$window = $window;
-    this._$location = $location;
+    this.$window = $window;
+    this.$location = $location;
   }
 
   get campus() {
-    return this._$window.appConfig['primo-view']['institution']['institution-code'];
+    return this.$window.appConfig['primo-view']['institution']['institution-code'];
   }
 
   get targetUrl() {
@@ -25,7 +25,7 @@ class PrmLogoAfterController {
   }
 
   get isTestEnvironment() {
-    let host = this._$location.host();
+    let host = this.$location.host();
     return (host.startsWith('umn-primoalmasb') || host.startsWith('primo-test'));
   }
 

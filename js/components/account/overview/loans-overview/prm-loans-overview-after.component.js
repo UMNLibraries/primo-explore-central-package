@@ -2,7 +2,7 @@ import illTemplate from './ill-overview.html';
 
 class PrmLoansOverviewAfterController {
   constructor($window, $scope, $compile, $element) {
-    this._$scope = $scope;
+    this.$scope = $scope;
     this.institution = $window.appConfig['primo-view']['institution']['institution-code'];
     this.illTile = $compile(illTemplate)($scope);
     this.accoutOverviewGrid = $element.parent().parent();
@@ -16,7 +16,7 @@ class PrmLoansOverviewAfterController {
   }
 
   appendIllTileToAccountOverview() {
-    let unbindWatch = this._$scope.$watch('$ctrl.accoutOverviewGrid', 
+    let unbindWatch = this.$scope.$watch('$ctrl.accoutOverviewGrid', 
       accountOverviewGrid => {
         if (accountOverviewGrid) {
           accountOverviewGrid.append(this.illTile);

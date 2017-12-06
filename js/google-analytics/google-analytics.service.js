@@ -12,21 +12,21 @@ function _loadAnalytics(window) {
 class GoogleAnalytics {
 
   constructor($rootScope, $location, $window) {
-    this._$rootScope = $rootScope;
-    this._$location = $location; 
-    this._$window = $window;
+    this.$rootScope = $rootScope;
+    this.$location = $location; 
+    this.$window = $window;
 
-    _loadAnalytics(this._$window);
-    this._$window.ga('create', this.trackingId, 'auto');
-    this._$window.ga('set', 'anonymizeIp', true);
+    _loadAnalytics(this.$window);
+    this.$window.ga('create', this.trackingId, 'auto');
+    this.$window.ga('set', 'anonymizeIp', true);
     
     if (this.campusDim) {
-      this._$window.ga('set', 'dimension1', this.campusDim);
+      this.$window.ga('set', 'dimension1', this.campusDim);
     }
   }
 
   get trackingId() {
-    if (PROD_HOST_PATTERN.test(this._$location.host())) {
+    if (PROD_HOST_PATTERN.test(this.$location.host())) {
       return PROD_TRACKING_ID;
     } else {
       return STAGE_TRACKING_ID;
@@ -35,7 +35,7 @@ class GoogleAnalytics {
 
   get campusDim() {
     let campus = null;
-    let view = (this._$location.search().vid || '');
+    let view = (this.$location.search().vid || '');
     if (/^(twincities|duluth|morris|crookston)(_sp)?$/i.test(view)) {
       campus = view.toLowerCase().replace(/_sp$/, '');
     }
@@ -43,13 +43,13 @@ class GoogleAnalytics {
   }
 
   trackPageviews() {
-    this._$rootScope.$on('$locationChangeSuccess', () => {
-      this._$window.ga('send', 'pageview', {location: this._$location.url()});
+    this.$rootScope.$on('$locationChangeSuccess', () => {
+      this.$window.ga('send', 'pageview', {location: this.$location.url()});
     });
   }
 
   trackEvent(category, action, label) {
-    this._$window.ga('send', 'event', category, action, label);
+    this.$window.ga('send', 'event', category, action, label);
   }
 
 }
@@ -57,4 +57,3 @@ class GoogleAnalytics {
 GoogleAnalytics.$inject = ['$rootScope', '$location', '$window'];
 
 export default GoogleAnalytics;
-
