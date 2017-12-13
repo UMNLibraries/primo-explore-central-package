@@ -30,7 +30,9 @@ Custom JavaScript, HTML, CSS, and images for the Primo AngularJS UI. The files i
     ```
 
 ## Local Development
-Run `npm run start`. This task builds the custom.js and custom1.css files, watches for js/css changes, and launches a Browsersync proxy that sits between the localhost and the UMN Primo sandbox. To preview local changes against the sandbox, point a browser to `localhost:8003/primo-explore/?vid={campus view ID}`. For example http://localhost:8003/primo-explore/?vid=TWINCITIES.
+Run `npm run start`. This task builds the custom.js and custom1.css files, watches for js/css changes, and launches a Browsersync proxy that sits between the localhost and the UMN Primo sandbox. To preview local changes in the sandbox, point a browser to `localhost:8003/primo-explore/?vid={campus view ID}`. For example http://localhost:8003/primo-explore/?vid=TWINCITIES.
+
+To preview local changes in production, run `npm run start-prod` instead.
 
 ## Deployment
 1. Run `npm run pkg` and select the number for  `CENTRAL_PACKAGE` when prompted. The package will be written to `primo-explore-devenv/packages/CENTRAL_PACKAGE.zip`. 
@@ -56,3 +58,13 @@ If you which to override any colors defined in this file, it's best to do so in 
 - [Primo Documentation](https://knowledge.exlibrisgroup.com/Primo/Product_Documentation)
 - [#primodev Slack Chanel](https://igelu-eluna-siwg.slack.com/messages/primodev)
 - [Primo Email List](https://el-una.org/about/mailing-lists/primo-email-list/)
+- [AngularJS 1.6 Documentation](https://code.angularjs.org/1.6.7/docs/guide)
+- [AngularJS Material Documentation](https://material.angularjs.org/latest/) 
+- Dev Tool Documentation:
+    - [Babel](https://babeljs.io/)
+    - [Browserify](http://browserify.org/)
+    - [Gulp](https://gulpjs.com/)
+    - [Karma](http://karma-runner.github.io/0.12/intro/installation.html)
+    - [Jasmine](https://jasmine.github.io/1.3/introduction.html)
+    - [NPM](https://docs.npmjs.com/)
+    - [Protractor](http://www.protractortest.org/)
