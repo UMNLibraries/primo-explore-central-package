@@ -27,7 +27,7 @@ class BloggerNotifications {
         close() {
           this.$mdToast.hide();
           // eslint-disable-next-line no-undef
-          notificationService._markNotificationAsRead();
+          notificationService.markNotificationAsRead();
         }
       },       
       template: notificationTemplate
