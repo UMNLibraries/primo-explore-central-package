@@ -26,8 +26,7 @@ class BloggerNotifications {
       controller: class {
         close() {
           this.$mdToast.hide();
-          // eslint-disable-next-line no-undef
-          notificationService.markNotificationAsRead();
+          this.notificationService.markNotificationAsRead();
         }
       },       
       template: notificationTemplate
