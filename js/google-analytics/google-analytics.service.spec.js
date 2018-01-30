@@ -29,10 +29,9 @@ describe('GoogleAnalytics Service', () => {
 
   it('should record pageview events when the location changes', () => {
     let url = '/foo';
-    $location.url(url);
     spyOn($window, 'ga');
     googleAnalyticsService.trackPageviews();
-    $rootScope.$broadcast('$locationChangeSuccess');
+    $rootScope.$broadcast('$locationChangeSuccess', url);
     expect($window.ga).toHaveBeenCalledWith('send', 'pageview', {location: url});
   });
 

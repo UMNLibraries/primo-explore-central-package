@@ -43,8 +43,8 @@ class GoogleAnalytics {
   }
 
   trackPageviews() {
-    this.$rootScope.$on('$locationChangeSuccess', () => {
-      this.$window.ga('send', 'pageview', {location: this.$location.url()});
+    this.$rootScope.$on('$locationChangeSuccess', (event, newUrl, oldUrl) => {
+      this.$window.ga('send', 'pageview', {location: newUrl});
     });
   }
 
