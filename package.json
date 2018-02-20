@@ -36,6 +36,7 @@
   "scripts": {
     "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu'",
     "start-prod": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo.lib.umn.edu'",
+    "start-qa": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-qa.hosted.exlibrisgroup.com'",
     "test-unit": "karma start --singleRun",
     "test-e2e": "protractor e2e-tests/protractor.conf",
     "pkg": "gulp create-package",
