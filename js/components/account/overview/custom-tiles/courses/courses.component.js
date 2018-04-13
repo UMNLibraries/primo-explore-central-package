@@ -1,22 +1,24 @@
 import template from './courses.html';
 
 class CoursesController {
-  
   constructor(coursesService) {
     this.coursesService = coursesService;
-    this.courses = '';
+    this.courses = [];
   }
 
   loadCourses() {
-    console.log("GOT IT!");
-    //this.courses = "MY COURSE LIST...";
     this.coursesService.getCourses()
       .then(courses => this.courses = courses);
+  }
+
+  hasCourses() {
+    return (Array.isArray(this.courses) && this.courses.length > 0);
   }
 }
 
 CoursesController.$inject = ['courses'];
 
+//TODO: show icon if there are no courses?
 export default {
   controller: CoursesController,
   template: template

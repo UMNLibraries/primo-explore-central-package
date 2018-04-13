@@ -1,8 +1,8 @@
 import ShibAuthEvents from './shib-auth-events.service';
 import ShibAuth from './shib-auth.component';
 
-const HOST = 'stacksdev.lib.umn.edu';
-const TARGET = 'https://stacksdev.lib.umn.edu/userapi/autologincb';
+const HOST = 'stacks.lib.umn.edu';
+const TARGET = 'https://stacks.lib.umn.edu/userapi/autologincb';
 const EXPECTED_MSG = 'stacks';
 
 export default angular
