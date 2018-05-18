@@ -1,15 +1,16 @@
 class Courses {
-  constructor($http, $q) {
+  constructor($http, $q, $log) {
     this.coursesUrl = 'https://stacks.lib.umn.edu/userapi/current-user/courses';
     this.$http = $http;
     this.$q = $q;
+    this.$log = $log;
   }
 
   getCourses() {
     let deferred = this.$q.defer();
     this.$http.get(this.coursesUrl, {withCredentials: true, cache: true})
       .then(resp => deferred.resolve(this.mergeCourses(resp.data.courses)))
-      .catch(error => console.log(error));
+      .catch(error => this.$log.error(error));
     return deferred.promise;
   }
 
@@ -19,6 +20,6 @@ class Courses {
 
 }
 
-Courses.$inject = ['$http', '$q'];
+Courses.$inject = ['$http', '$q', '$log'];
 
 export default Courses;

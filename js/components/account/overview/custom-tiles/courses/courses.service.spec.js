@@ -160,8 +160,22 @@ describe('Courses Service', () => {
       expect(courseList.filter(c => c.role==='Instructor').length).toBe(3);
     });
     $httpBackend.flush();
-
   });
 
+  it('should return an empty array if the user has no courses', () => {
+    let response = `
+    {
+      responseCode: 200,
+      courses: {
+      student: [ ],
+      instructor: [ ]
+      }
+    }`;
+    $httpBackend.expectGET(courses.coursesUrl).respond(response);
+    courses.getCourses().then(courseList => {
+      expect(courseList.length).toBe(0);
+    });
+    $httpBackend.flush();
+  });
 
 });
