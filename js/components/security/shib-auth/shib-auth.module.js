@@ -1,15 +1,11 @@
 import ShibAuthEvents from './shib-auth-events.service';
 import ShibAuth from './shib-auth.component';
 
-const HOST = 'stacks.lib.umn.edu';
-const TARGET = 'https://stacks.lib.umn.edu/userapi/autologincb';
-const EXPECTED_MSG = 'stacks';
-
 export default angular
   .module('shibAuth', [])
-  .constant('shibAuthHost', HOST)
-  .constant('shibAuthTarget', TARGET)
-  .constant('shibAuthExpectedMsg', EXPECTED_MSG)
+  .constant('shibAuthHost', 'stacks.lib.umn.edu')
+  .constant('shibAuthTarget', 'https://stacks.lib.umn.edu/userapi/autologincb')
+  .constant('shibAuthExpectedMsg', 'stacks')
   .service('shibAuthEvents', ShibAuthEvents)
   .component('shibAuth', ShibAuth)
   .run(['shibAuthEvents', shibAuthEvents => shibAuthEvents.init()])
