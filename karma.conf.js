@@ -43,13 +43,15 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 
     preprocessors: {
-      'js/**/*.spec.js': ['babel'],
+      //'js/**/*.spec.js': ['browserify', 'babel']
+      //'js/**/*.spec.js': ['babel', 'browserify']
       'js/**/*.spec.js': ['browserify']
     },
 
     browserify: {
       debug: true,
-      transform: [ 'babelify' ]
+      transform: [[ 'babelify', {presets: ['es2015']}]]
+      //transform: [[ 'babelify', {global: true, presets: ['es2015']}]]
     },
 
     // Babel preprocessor specific configuration
@@ -101,5 +103,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
-}
+  });
+};
