@@ -6,7 +6,7 @@ import template from './custom-tiles.html';
  * This component (element directive) should be placed in any of the
  * prm-{tile}-overview-after components as a child element. For example: 
  *  <prm-loans-overview-after>
- *    <inject-custom-tiles></inject-custom-tiles>
+ *    <custom-tiles></custom-tiles>
  *  </prm-loans-overview-after>
  * 
  */

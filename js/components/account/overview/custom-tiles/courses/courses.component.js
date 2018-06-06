@@ -18,7 +18,6 @@ class CoursesController {
 
 CoursesController.$inject = ['courses'];
 
-//TODO: show icon if there are no courses?
 export default {
   controller: CoursesController,
   template: template
