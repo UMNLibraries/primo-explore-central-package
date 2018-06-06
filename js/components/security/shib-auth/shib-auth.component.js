@@ -23,7 +23,8 @@ class ShibAuthController {
   }
 
   removeIframe() {
-    this.$element.find('iframe')[0].remove();
+    const iframe = this.$element.find('iframe')[0];
+    if (iframe) iframe.remove();
   }
 
   $onDestroy() {
