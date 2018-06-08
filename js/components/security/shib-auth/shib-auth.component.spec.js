@@ -22,12 +22,12 @@ describe('ShibAuth Component', () => {
   });
 
   it('should remove its event observer once notified', () => {
-    controller.authenticationCallback();
+    controller.authenticationObserver();
     expect(shibAuthEvents.observers.length).toBe(0);
   });
 
   it('should trigger the on-auth binding once notified', () => {
-    controller.authenticationCallback();
+    controller.authenticationObserver();
     expect(scope.callback).toHaveBeenCalled();
   });
 
@@ -38,7 +38,7 @@ describe('ShibAuth Component', () => {
   });
 
   it('should remove the shib host iframe once notified', ()  => {
-    controller.authenticationCallback();
+    controller.authenticationObserver();
     let iframe = element.find('iframe');
     expect(iframe.length).toBe(0);
   });

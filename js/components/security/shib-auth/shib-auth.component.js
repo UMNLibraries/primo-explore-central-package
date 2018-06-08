@@ -11,14 +11,14 @@ class ShibAuthController {
   }
 
   $onInit() {
-    this.authenticationCallback = () => this.handleAuthentication();
-    this.shibAuthEvents.addObserver(this.authenticationCallback);
+    this.authenticationObserver = () => this.handleAuthentication();
+    this.shibAuthEvents.addObserver(this.authenticationObserver);
     this.timer = this.$timeout(() => this.removeIframe(), 5000);
   }
 
   handleAuthentication() {
     this.onAuth();
-    this.shibAuthEvents.removeObserver(this.authenticationCallback);
+    this.shibAuthEvents.removeObserver(this.authenticationObserver);
     this.removeIframe();
   }
 
@@ -28,7 +28,7 @@ class ShibAuthController {
   }
 
   $onDestroy() {
-    this.shibAuthEvents.removeObserver(this.authenticationCallback);
+    this.shibAuthEvents.removeObserver(this.authenticationObserver);
     this.$timeout.cancel(this.timer);
   }
 
