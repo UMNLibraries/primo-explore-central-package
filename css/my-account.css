@@ -22,3 +22,6 @@ prm-account-overview div[ng-if="$ctrl.showActionSection()"] {
 prm-account-overview md-divder[ng-if="$ctrl.showActionSection()"] {
   display: none;
 }
+
+/* hide language option */
+prm-personal-info md-card:not(#personalDetails) {display:none;}
