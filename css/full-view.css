@@ -4,9 +4,9 @@
 }
 #getit_link1_0 {order: 1;}
 #getit_link1_1 {order: 2;}
-#action_list {order: 3;}
-#details {order: 4;}
-#getit_link2 {order: 5;}
+#getit_link2 {order: 3;}
+#action_list {order: 4;}
+#details {order: 5;}
 #virtualBrowse {order: 6;}
 #links {order: 7;}
 
@@ -14,6 +14,5 @@ button[aria-label='View It'] {order:1;}
 button[aria-label='Get It'] {order:2;}
 button[aria-label='Send to'] {order:3;}
 button[aria-label='Details'] {order:4;}
-button[aria-label='Find or Request'] {order:5;}
-button[aria-label='Virtual Browse'] {order:6;}
-button[aria-label='Links'] {order:7;}
+button[aria-label='Virtual Browse'] {order:5;}
+button[aria-label='Links'] {order:6;}
