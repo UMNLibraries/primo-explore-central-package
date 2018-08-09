@@ -42,7 +42,7 @@ To preview local changes in production, run `npm run start-prod` instead.
 3. Run Deploy All > Views. 
 
 ## Updating the Color Scheme
-Edit the `colors.json` file, and then run `gulp run gen-color-scheme`. This will rebuild the `app-colors.css` file. It's a good idea to do this following Primo upgrades (which sometimes introduce new HTML elements).
+Edit the `colors.json` file, and then run `npm run gen-color-scheme`. This will rebuild the `app-colors.css` file. It's a good idea to do this following Primo upgrades (which sometimes introduce new HTML elements).
 
 If you which to override any colors defined in this file, it's best to do so in a separate css file. 
 
