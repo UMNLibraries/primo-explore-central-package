@@ -38,7 +38,7 @@ describe('RedirectToMyAccount Service', () => {
     spyOn($translate, 'use').and.returnValue(LANG);
     spyOn(sessionTimeoutService, 'isSessionExpired').and.callThrough();
     spyOn(sessionTimeoutService, 'startSession').and.callThrough();
-    spyOn($state, 'go').and.callThrough();
+    spyOn($state, 'go');
   }));
 
   it('should update the state when a "redirect=myaccount" parameter is provided', () => {
