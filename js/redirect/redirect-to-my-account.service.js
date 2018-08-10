@@ -41,7 +41,6 @@ class RedirectToMyAccount {
   }
 
   goToMyLibraryCard() {
-    console.log("redirecting to account");
     // This is pretty ugly, but it only seems to work consistently if $timeout
     // is used to wait for the next digest cycle. 
     this.$timeout(() => {
