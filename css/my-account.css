@@ -25,3 +25,21 @@ prm-account-overview md-divder[ng-if="$ctrl.showActionSection()"] {
 
 /* hide language option */
 prm-personal-info md-card:not(#personalDetails) {display:none;}
+
+
+/* make the loan & request title links appear not clickable */
+md-list-item .md-list-item-with-checkbox .title-row.is-hovered prm-icon {
+  opacity: 0;
+  }
+prm-loan h3 a, 
+prm-requests h3 a {
+  color: inherit;
+}
+prm-loan h3 a:hover, 
+prm-requests h3 a:hover {
+  color: inherit;
+  background-color: inherit;
+  box-shadow: none;
+  cursor: inherit;
+  padding-bottom: none;
+}
