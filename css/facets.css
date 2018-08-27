@@ -49,10 +49,14 @@ prm-search-result-list prm-personalize-results-button .md-button md-switch._md-c
 .sidebar .personalization-section md-checkbox.md-checked .md-icon, 
 .sidebar .personalization-section .sidebar-list li:before, 
 .sidebar .personalization-section ul li:before {
-  background-color: #3b6265; 
+  background-color: #5C92BD; 
 }
 prm-search-result-list prm-personalize-results-button .md-button.toggled.button-as-link:hover:not([disabled]):hover:not([disabled]) {
   background-color: hsla(0,0%,43%,.1);
+}
+
+.section-content .md-chips .md-chip .md-chip-content {
+  color: #3a3a3a;
 }
 
 /*

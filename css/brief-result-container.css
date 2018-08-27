@@ -1,3 +1,7 @@
 prm-icon.peer-reviewed-mark-icon {
   color: #7a0019 !important;
 }
+
+prm-search-result-availability-line [availability-type] {
+  color: rgba(58,58,58,.8);
+}
