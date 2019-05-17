@@ -1,0 +1,38 @@
+body, md-content.main, div.list-item-wrapper, div.full-view-inner-container, prm-full-view-cont > md-content.md-primoExplore-theme {
+  background-color: #ffffff; }
+
+div.list-item-wrapper {
+  border-bottom-color: #404d5b; }
+  div.list-item-wrapper:hover {
+    background-color: #f3f3f3; }
+
+div#facets .facet-title, div#facets h3.section-title-header, div#facets md-checkbox {
+  color: #fff; }
+
+div#facets md-checkbox ._md-icon {
+  border-color: #fff; }
+
+prm-facet div.sidebar-inner-wrapper {
+  padding-left: 0; }
+  prm-facet div.sidebar-inner-wrapper > div {
+    border-top: solid #fff;
+    background-color: #404d5b;
+    color: #fff; }
+  prm-facet div.sidebar-inner-wrapper > div:first-child {
+    border: none; }
+  prm-facet div.sidebar-inner-wrapper > div:nth-child(2) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-order: -1;
+    order: -1;
+    border: none;
+    background-color: transparent;
+    color: #3a3a3a; }
+    prm-facet div.sidebar-inner-wrapper > div:nth-child(2) span {
+      color: #3a3a3a; }
+
+prm-facet-group > div {
+  padding-left: 1em; }
+
+prm-search-bookmark-filter #fixed-buttons-holder.fixed-to-top #favorites-button {
+  color: gold; }

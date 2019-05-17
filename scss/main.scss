@@ -1,0 +1,57 @@
+@import "partials/variables";
+
+$darkBlue: #404d5b;
+
+body, md-content.main, div.list-item-wrapper, div.full-view-inner-container, prm-full-view-cont > md-content.md-primoExplore-theme {
+  background-color: $backgroundColor;
+}
+
+div.list-item-wrapper {
+  border-bottom-color: $darkBlue;
+  &:hover {
+    background-color: #f3f3f3;
+  }
+}
+
+div#facets {
+  .facet-title, h3.section-title-header, md-checkbox {
+    color: #fff;
+  }
+  md-checkbox ._md-icon {
+    border-color: #fff;
+  } 
+}
+
+prm-facet div.sidebar-inner-wrapper {
+  padding-left: 0;
+
+  & > div {
+    border-top: solid #fff;
+    background-color: $darkBlue;
+    color: #fff;
+  }
+
+  & > div:first-child {
+    border: none;
+  }
+
+  & > div:nth-child(2) {
+    display: flex;
+    order: -1;
+    border: none;
+    background-color: transparent;
+    color: $dark;
+
+    span {
+      color: $dark;
+    }
+  }
+}
+
+prm-facet-group > div {
+  padding-left: 1em;
+}
+
+prm-search-bookmark-filter #fixed-buttons-holder.fixed-to-top #favorites-button {
+  color: gold;
+}
