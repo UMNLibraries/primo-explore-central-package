@@ -2,17 +2,78 @@
 
 $darkBlue: #404d5b;
 
+/*
 body, md-content.main, div.list-item-wrapper, div.full-view-inner-container, prm-full-view-cont > md-content.md-primoExplore-theme {
   background-color: $backgroundColor;
 }
+*/
 
+.prm-background, html, body, prm-search .ui-blocker, prm-featured-results .horizontal-content-container .horizontal-content-control, prm-search-bar .simple-search-wrapper .search-options:after, prm-atoz-search-bar .simple-search-wrapper .search-options:after, prm-browse-search-bar .simple-search-wrapper .search-options:after, prm-tags-search-bar .simple-search-wrapper .search-options:after, prm-newspapers-search-bar .simple-search-wrapper .search-options:after, prm-search-bar .simple-search-wrapper .search-options md-divider, prm-atoz-search-bar .simple-search-wrapper .search-options md-divider, prm-browse-search-bar .simple-search-wrapper .search-options md-divider, prm-tags-search-bar .simple-search-wrapper .search-options md-divider, prm-newspapers-search-bar .simple-search-wrapper .search-options md-divider, .prm-view-overlay-inner, .__xs prm-facet,
+.__sm prm-facet, .__sm .sidebar,
+.__xs .sidebar, .available-facets .section-content .md-chips .md-chip .md-button:before, .multiselect-submit .multiselect-submit-inner, prm-full-view-cont prm-recomendation-item .media-on-hover .pin-button, prm-full-view-cont .recommendations-title:after, prm-full-view-cont .recommendations-title prm-icon, databases .sticking-wrapper, md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider, md-dialog md-toolbar:not(.md-menu-toolbar), md-card .card-content-block {
+  //background-color: #f0efee;
+  //background-color: #fff;
+}
+
+.list-item-wrapper {
+  background-color: #fff;
+}
+
+/*
+// not sure about this...
+form[name='search-form'] button {
+  background-color: #ffd75f;
+
+  prm-icon { 
+    color: #7a0019;
+  }
+
+}
+*/
+
+prm-user-area .user-menu-button .user-name, prm-user-area-expandable .user-button span {
+  color: #ffd75f;
+  font-weight: bold;
+}
+
+//alert-bar>div>div {
+.prm-alert-bg, .bar.alert-bar, .classic-input .search-scope {
+  background-color: #ffd75f;
+  button {
+    color: #7a0019;
+    //color: inherit;
+
+    &:hover:not([disabled]) {
+      color: inherit;
+      //color: #7a0019;
+    }
+
+    &:focused:not([disabled]) {
+      color: inherit;
+      //color: #7a0019;
+    }
+  }
+}
+
+.prm-notice, .status-maybe, [class*="NFT"], [class*="check_"], [class*="_more"], [class*="_unknown"], [class*="may_"], [class*="does_not_exist"], .worldcat, .getit, prm-search-result-frbr-line a > prm-icon:first-child, prm-search-result-frbr-line .md-button.arrow-link-button .button-content > prm-icon:first-child, .md-button.arrow-link-button prm-search-result-frbr-line .button-content > prm-icon:first-child {
+  color: #7a0019;
+}
+
+div._md-list-item-inner {
+  background-color: #fff;
+}
+
+
+/*
 div.list-item-wrapper {
   border-bottom-color: $darkBlue;
   &:hover {
     background-color: #f3f3f3;
   }
 }
+*/
 
+/*
 div#facets {
   .facet-title, h3.section-title-header, md-checkbox {
     color: #fff;
@@ -21,20 +82,31 @@ div#facets {
     border-color: #fff;
   } 
 }
+*/
 
 prm-facet div.sidebar-inner-wrapper {
-  padding-left: 0;
+//  padding-left: 0;
+
+  padding-right: 1em;
+
+
 
   & > div {
-    border-top: solid #fff;
-    background-color: $darkBlue;
-    color: #fff;
+    // border-top: solid #fff;
+    // background-color: $darkBlue;
+   // border: solid 1px $darkBlue;
+    // color: #fff;
   }
 
+  /*
   & > div:first-child {
     border: none;
+    background-color: transparent;
+    color: $dark;
   }
+  */
 
+  /*
   & > div:nth-child(2) {
     display: flex;
     order: -1;
@@ -46,12 +118,70 @@ prm-facet div.sidebar-inner-wrapper {
       color: $dark;
     }
   }
+  */
+
+}
+  
+prm-facet-exact, prm-facet-range {
+
+  & > div {
+    background-color: #fff;
+    //border-top: solid #d5d6d2 1px;
+    /*
+    border-bottom: solid #d5d6d2 1px;
+    border-left: solid #d5d6d2 1px;
+    border-right: solid #d5d6d2 1px;
+    */
+  }
+
+  div.section-content {
+    padding-top: .5em;
+    padding-bottom: .5em;
+//    margin-bottom: 1em;
+
+
+    button.button-exclude::before {
+      background-color: transparent !important;
+    }
+
+  }
+
+  & > button.section-title {
+    background-color: #fff; /// #d5d6d2; //#8a8a8a; // rgba(58, 58, 58, 0.1);
+    //margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: 1px;
+
+    /*
+    &:hover:not([disabled]) {
+      background-color: #fff;
+    }
+
+    &:focused:not([disabled]) {
+      background-color: #fff;
+    }
+    */
+
+    & > div {
+      justify-content: space-between;
+    }
+  }
+
+  div.md-chips , div.expand-section-button {
+    padding-left: 1em;
+//    margin-bottom: 1em;
+  }
+
 }
 
 prm-facet-group > div {
-  padding-left: 1em;
+  //padding-left: 1em;
+//  background-color: #fff;
 }
 
+/*
 prm-search-bookmark-filter #fixed-buttons-holder.fixed-to-top #favorites-button {
-  color: gold;
+ // color: gold;
 }
+*/
