@@ -1,38 +1,48 @@
-body, md-content.main, div.list-item-wrapper, div.full-view-inner-container, prm-full-view-cont > md-content.md-primoExplore-theme {
-  background-color: #ffffff; }
+.list-item-wrapper {
+  background-color: #fff; }
 
-div.list-item-wrapper {
-  border-bottom-color: #404d5b; }
-  div.list-item-wrapper:hover {
-    background-color: #f3f3f3; }
+prm-user-area .user-menu-button .user-name, prm-user-area-expandable .user-button span {
+  color: #ffd75f;
+  font-weight: bold; }
 
-div#facets .facet-title, div#facets h3.section-title-header, div#facets md-checkbox {
-  color: #fff; }
+.prm-alert-bg, .bar.alert-bar, .classic-input .search-scope {
+  background-color: #ffd75f; }
+  .prm-alert-bg button, .bar.alert-bar button, .classic-input .search-scope button {
+    color: #7a0019; }
+    .prm-alert-bg button:hover:not([disabled]), .bar.alert-bar button:hover:not([disabled]), .classic-input .search-scope button:hover:not([disabled]) {
+      color: inherit; }
+    .prm-alert-bg button:focused:not([disabled]), .bar.alert-bar button:focused:not([disabled]), .classic-input .search-scope button:focused:not([disabled]) {
+      color: inherit; }
 
-div#facets md-checkbox ._md-icon {
-  border-color: #fff; }
+.prm-notice, .status-maybe, [class*="NFT"], [class*="check_"],
+[class*="_more"], [class*="_unknown"], [class*="may_"],
+[class*="does_not_exist"], .worldcat, .getit, prm-search-result-frbr-line a >
+prm-icon:first-child, prm-search-result-frbr-line
+.md-button.arrow-link-button .button-content > prm-icon:first-child,
+.md-button.arrow-link-button prm-search-result-frbr-line .button-content >
+prm-icon:first-child {
+  color: #7a0019; }
 
-prm-facet div.sidebar-inner-wrapper {
-  padding-left: 0; }
-  prm-facet div.sidebar-inner-wrapper > div {
-    border-top: solid #fff;
-    background-color: #404d5b;
-    color: #fff; }
-  prm-facet div.sidebar-inner-wrapper > div:first-child {
-    border: none; }
-  prm-facet div.sidebar-inner-wrapper > div:nth-child(2) {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-order: -1;
-    order: -1;
-    border: none;
-    background-color: transparent;
-    color: #3a3a3a; }
-    prm-facet div.sidebar-inner-wrapper > div:nth-child(2) span {
-      color: #3a3a3a; }
+div._md-list-item-inner {
+  background-color: #fff; }
 
-prm-facet-group > div {
+prm-facet-exact > div, prm-facet-range > div {
+  background-color: #fff; }
+
+prm-facet-exact div.section-content, prm-facet-range div.section-content {
+  padding-top: .5em;
+  padding-bottom: .5em; }
+  prm-facet-exact div.section-content button.button-exclude::before, prm-facet-range div.section-content button.button-exclude::before {
+    background-color: transparent !important; }
+
+prm-facet-exact > button.section-title, prm-facet-range > button.section-title {
+  background-color: #dbdbdb;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: 1px; }
+  prm-facet-exact > button.section-title > div, prm-facet-range > button.section-title > div {
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+
+prm-facet-exact div.md-chips, prm-facet-exact div.expand-section-button, prm-facet-range div.md-chips, prm-facet-range div.expand-section-button {
   padding-left: 1em; }
-
-prm-search-bookmark-filter #fixed-buttons-holder.fixed-to-top #favorites-button {
-  color: gold; }
