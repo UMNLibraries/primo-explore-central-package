@@ -6,13 +6,15 @@
 #getit_link1_1 {order: 2;}
 #getit_link2 {order: 3;}
 #action_list {order: 4;}
-#details {order: 5;}
-#virtualBrowse {order: 6;}
-#links {order: 7;}
+#citationTrails {order: 5;}
+#details {order: 6;}
+#virtualBrowse {order: 7;}
+#links {order: 8;}
 
-button[aria-label='View It'] {order:1;}
-button[aria-label='Get It'] {order:2;}
-button[aria-label='Send to'] {order:3;}
-button[aria-label='Details'] {order:4;}
-button[aria-label='Virtual Browse'] {order:5;}
-button[aria-label='Links'] {order:6;}
+button[aria-label='View It'] {order: 1;}
+button[aria-label='Get It'] {order: 2;}
+button[aria-label='Send to'] {order: 3;}
+button[aria-label='Citations'] {order: 4;}
+button[aria-label='Details'] {order: 5;}
+button[aria-label='Virtual Browse'] {order: 6;}
+button[aria-label='Links'] {order: 7;}
