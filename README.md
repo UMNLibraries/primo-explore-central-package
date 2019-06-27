@@ -35,7 +35,7 @@ Run `npm run start`. This task builds the custom.js and custom1.css files, watch
 To preview local changes in production, run `npm run start-prod` instead.
 
 ## Deployment
-1. Run `npm run pkg` and select the number for  `CENTRAL_PACKAGE` when prompted. The package will be written to `primo-explore-devenv/packages/CENTRAL_PACKAGE.zip`. 
+1. Run `npm run pkg`. The package will be written to `primo-explore-devenv/packages/CENTRAL_PACKAGE.zip`. 
 
 2. In the Primo Back Office, navigate to Primo Utilities > UI Customization Package Manager, and upload the CENTRAL_PACKAGE.zip file. 
 
