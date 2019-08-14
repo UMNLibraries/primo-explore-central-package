@@ -5,3 +5,7 @@ prm-icon.peer-reviewed-mark-icon {
 prm-search-result-availability-line [availability-type] {
   color: rgba(58,58,58,.8);
 }
+
+div.course-info-mark {
+  display: none;
+}
