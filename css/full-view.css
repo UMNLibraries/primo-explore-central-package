@@ -11,10 +11,5 @@
 #virtualBrowse {order: 7;}
 #links {order: 8;}
 
-button[aria-label='View It'] {order: 1;}
-button[aria-label='Get It'] {order: 2;}
-button[aria-label='Send to'] {order: 3;}
-button[aria-label='Citations'] {order: 4;}
-button[aria-label='Details'] {order: 5;}
-button[aria-label='Virtual Browse'] {order: 6;}
-button[aria-label='Links'] {order: 7;}
+.services-index-under { display: none; }
+.full-view-section-content { padding-left: 0 !important; }
