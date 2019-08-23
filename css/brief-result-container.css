@@ -9,3 +9,7 @@ prm-search-result-availability-line [availability-type] {
 div.course-info-mark {
   display: none;
 }
+
+prm-citation-trails-indication-container {
+  display: none;
+}
