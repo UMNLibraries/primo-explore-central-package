@@ -40,7 +40,7 @@
     "start-qa": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-qa.hosted.exlibrisgroup.com' --useScss",
     "test-unit": "karma start --singleRun",
     "test-e2e": "protractor e2e-tests/protractor.conf",
-    "pkg": "gulp create-package --browserify --view CENTRAL_PACKAGE",
+    "pkg": "gulp create-package --browserify --view CENTRAL_PACKAGE --useScss",
     "webdriver-update": "webdriver-manager update",
     "gen-color-scheme": "gulp app-css --view CENTRAL_PACKAGE --proxy 'https://primo-test.lib.umn.edu'",
     "check-npm-version": "npm -v"
