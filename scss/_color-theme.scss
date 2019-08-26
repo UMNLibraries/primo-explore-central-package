@@ -1,0 +1,18 @@
+.prm-alert-bg,
+.bar.alert-bar,
+.classic-input .search-scope {
+  background-color: $gold;
+  border-color: $gold;
+
+  button {
+    color: $maroon;
+
+    &:hover:not([disabled]) {
+      color: inherit;
+    }
+
+    &:focused:not([disabled]) {
+      color: inherit;
+    }
+  }
+}
