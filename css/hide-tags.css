@@ -1,3 +1,2 @@
 /* hide "tags" */
 button[aria-label="Tags"] {display: none;}
-div.full-view-section#tags {display: none;}
