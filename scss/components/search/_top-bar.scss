@@ -1,0 +1,20 @@
+// pin animation colors
+.pinDummy prm-icon {color: #809FA6;}
+.pinDummy:before {background-color: $dark-gold;}
+prm-search-bookmark-filter #favorites-button:before {background-color: $dark-gold;} 
+
+// hide "tags"
+button[aria-label="Tags"] {display: none;}
+
+prm-logo { 
+  div.product-logo {
+    display:none;
+  }
+  div.product-logo-local {
+    display: block;
+    a:hover {
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}
