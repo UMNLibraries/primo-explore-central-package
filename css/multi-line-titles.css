@@ -1,5 +1,0 @@
-/* force multi-line titles to appear on separate lines */
-prm-brief-result .item-title span.media-delimiter::after {
-  content: '\A';
-  white-space: pre;
-}
