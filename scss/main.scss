@@ -1,6 +1,7 @@
 @import "variables";
 @import "color-theme";
 @import "components";
+@import "blogger-notification";
 
 .results-container .list-item-wrapper {
   background-color: #fff;
@@ -12,6 +13,6 @@ prm-user-area-expandable .user-button span {
   font-weight: bold;
 }
 
-div._md-list-item-inner {
+prm-browse-search md-list.prm-list.prm-linkable-list-items md-list-item ._md-list-item-inner {
   background-color: #fff;
 }
