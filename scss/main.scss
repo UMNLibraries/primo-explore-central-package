@@ -2,17 +2,3 @@
 @import "theme";
 @import "components";
 @import "blogger-notification";
-
-.results-container .list-item-wrapper {
-  background-color: #fff;
-}
-
-prm-user-area .user-menu-button .user-name, 
-prm-user-area-expandable .user-button span {
-  color: $light-gold;
-  font-weight: bold;
-}
-
-prm-browse-search md-list.prm-list.prm-linkable-list-items md-list-item ._md-list-item-inner {
-  background-color: #fff;
-}

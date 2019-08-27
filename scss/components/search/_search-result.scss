@@ -1,4 +1,8 @@
 prm-search-result-list {
+  .results-container .list-item-wrapper {
+    background-color: #fff;
+  }
+
   // collapse the spacing above the "haven't found" card
   .list-spacer {
     min-height: initial;
