@@ -1,3 +1,13 @@
+prm-search-bar {
+  button {
+    &.switch-to-advanced, 
+    &.switch-to-simple {
+      //border: solid 1px;
+      font-weight: 600;
+    }
+  }
+}
+
 .classic-input .search-scope.journal-search-tile {
   padding: 0 .5em;
 }
