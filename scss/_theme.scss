@@ -21,6 +21,7 @@ md-backdrop.md-opaque {
   background-color: #000;
 }
 
-h2 {
-  font-weight: 400;
+// override the MD stylesheets and us a normal weight for headers 
+h2, h4 {
+  font-weight: 400 !important;
 }
