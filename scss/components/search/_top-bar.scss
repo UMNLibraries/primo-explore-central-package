@@ -1,0 +1,38 @@
+// pin animation colors
+.pinDummy prm-icon {color: #809FA6;}
+.pinDummy:before {background-color: $dark-gold;}
+prm-search-bookmark-filter #favorites-button:before {background-color: $dark-gold;} 
+
+// hide "tags"
+button[aria-label="Tags"] {display: none;}
+
+prm-logo { 
+  div.product-logo {
+    display:none;
+  }
+  div.product-logo-local {
+    display: block;
+    a:hover {
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}
+
+prm-user-area .user-menu-button .user-name, 
+prm-user-area-expandable .user-button span {
+  color: $light-gold;
+  font-weight: bold;
+}
+
+prm-user-area-expandable {
+  span {
+    font-weight: bold;
+  }
+}
+
+prm-main-menu {
+  .item-content {
+    font-weight: bold;
+  }
+}

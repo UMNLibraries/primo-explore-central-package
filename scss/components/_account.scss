@@ -1,0 +1,68 @@
+// fix my account links
+prm-account-links {
+  a {
+    margin-left: 1em;
+  }
+  md-icon {
+    height: 15px;
+    min-height: 15px;
+    width: 15px;
+    min-width: 15px;
+    margin-left: .2em;
+  }
+}
+
+prm-personal-info {
+  // hide group and expire date
+  div.header-subtitle {
+    display: none;
+  }
+
+  // hide language option
+  md-card:not(#personalDetails) {
+    display:none;
+  }
+
+  //hide letter options 
+  div, md-divder {
+    &[ng-if="$ctrl.showActionSection()"] {
+      display: none !important;
+    }
+  }
+}
+
+// make the loan & request title links appear not clickable
+prm-loans, 
+prm-requests {
+
+  md-list-item {
+    .md-list-item-with-checkbox .title-row.is-hovered prm-icon {
+      opacity: 0;
+    } 
+    &.md-clickable:hover {
+      cursor: inherit;
+    }
+  }
+
+  h3 a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+      background-color: inherit;
+      box-shadow: none;
+      cursor: inherit;
+      padding-bottom: none;
+    }
+  }
+}
+
+courses .tiles-grid-tile .tile-content md-list-item {
+  border-bottom: none;
+  cursor: default;
+  padding-bottom: .75em;
+
+  &:hover {
+    background-color: unset;
+  }
+}

@@ -1,4 +1,31 @@
-/* results personalization */
+prm-search-result-list {
+  .results-container .list-item-wrapper {
+    background-color: #fff;
+  }
+
+  // collapse the spacing above the "haven't found" card
+  .list-spacer {
+    min-height: initial;
+  }
+  &-after md-card {
+    margin: 10px 0 100px 0;
+  }
+
+  // truncate long author lists in brief results
+  prm-brief-result h3.item-title + div.item-detail > span:first-child {
+    max-width: 30em;
+    white-space: nowrap;
+    display: inline-flex;
+
+    span:not(.media-delimiter) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+// results personalization 
 .prm-personalization, 
 prm-search-result-list prm-personalize-results-button .md-button md-switch.md-checked .md-label, 
 prm-search-result-list prm-personalize-results-button .md-button md-switch.md-checked ._md-label, 
@@ -7,7 +34,8 @@ prm-search-result-list prm-personalize-results-button .md-button md-switch._md-c
 .sidebar .personalization-section .section-title-header,
 .sidebar .personalization-section .sidebar-list,
 .sidebar .personalization-section md-checkbox {
-  color: #800000; }
+  color: $maroon; 
+}
 .prm-personalization-bg, 
 prm-search-result-list prm-personalize-results-button .md-button md-switch.md-checked .md-bar, 
 prm-search-result-list prm-personalize-results-button .md-button md-switch.md-checked ._md-bar, 
@@ -25,45 +53,3 @@ prm-search-result-list prm-personalize-results-button .md-button md-switch._md-c
 prm-search-result-list prm-personalize-results-button .md-button.toggled.button-as-link:hover:not([disabled]):hover:not([disabled]) {
   background-color: hsla(0,0%,43%,.1);
 }
-
-.section-content .md-chips .md-chip .md-chip-content {
-  color: #3a3a3a;
-}
-
-/*
-
-prm-facet-exact .section-content .md-chips .md-chip strong+span {
-  flex-basis: 100%;
-  margin-left: .25em;
-}
-
-.section-content .md-chips .md-chip .facet-title {
-  flex-basis: 0; 
-  flex-grow: 2;
-  margin-right: 0;
-}
-
-prm-facet-exact .section-content .md-chips .md-chip .md-chip-content {
-  flex-wrap: wrap;
-  padding-left: 0;
-  flex-direction: row-reverse;
-  position: initial; 
-  left: 0;
-}
-
-.multiselect-facet-group .md-chip .md-chip-content md-checkbox {
-  align-self: flex-start;
-  left: 4px;
-}
-
-
-.multiselect-facet-group .md-chip .md-chip-remove-container {
-  position: initial; 
-  left: 0;
-}
-
-
-.available-facets .section-content .md-chips .md-chip .md-chip-content:focus+.md-chip-remove-container .md-button, .available-facets .section-content .md-chips .md-chip.md-chip-remove-container .md-button:focus .md-button, .available-facets .section-content .md-chips .md-chip.md-chip-remove-container:focus .md-button, .available-facets .section-content .md-chips .md-chip:focus .md-button, .available-facets .section-content .md-chips .md-chip:hover .md-button {
-  top: -5px;
-}
-*/

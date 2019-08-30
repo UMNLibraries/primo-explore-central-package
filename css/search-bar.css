@@ -1,9 +1,0 @@
-.classic-input .search-scope.journal-search-tile {
-  padding: 0 .5em;
-}
-
-prm-browse-search-bar .journal-search-tile, 
-prm-journals-search-bar .journal-search-tile, 
-prm-tags-search-bar .journal-search-tile {
-  width: auto;
-}

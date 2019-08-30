@@ -1,0 +1,38 @@
+prm-facet {
+  .sidebar-inner-wrapper {
+    padding-right: .25em;
+  }
+}
+
+prm-facet-exact, 
+prm-facet-range {
+  & > div {
+    background-color: #fff;
+  }
+
+  div.section-content {
+    padding-top: .5em;
+    padding-bottom: .5em;
+
+    button.button-exclude::before {
+      background-color: transparent !important;
+    }
+  }
+
+  & > button.section-title {
+    background-color: #dbdbdb;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: 1px;
+
+    & > div {
+      justify-content: space-between;
+    }
+  }
+
+  div.md-chips, 
+  div.expand-section-button,
+  .md-chip > .md-range-content {
+    padding-left: 1em;
+  }
+}

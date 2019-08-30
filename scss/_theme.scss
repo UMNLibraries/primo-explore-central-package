@@ -1,0 +1,27 @@
+.prm-alert-bg,
+.bar.alert-bar,
+.classic-input .search-scope {
+  background-color: $light-gold;
+  border-color: $light-gold;
+
+  button {
+    color: $maroon;
+
+    &:hover:not([disabled]) {
+      color: inherit;
+    }
+
+    &:focused:not([disabled]) {
+      color: inherit;
+    }
+  }
+}
+
+md-backdrop.md-opaque {
+  background-color: #000;
+}
+
+// override the MD stylesheets and us a normal weight for headers 
+h2, h4 {
+  font-weight: 400 !important;
+}
