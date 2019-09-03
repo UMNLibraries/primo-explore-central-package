@@ -18,7 +18,7 @@ describe('RedirectToMyAccount Service', () => {
 
   beforeEach(angular.mock.module('ui.router'));
   beforeEach(angular.mock.module('pascalprecht.translate'));
-  beforeEach(angular.mock.module('redirect'));
+  beforeEach(angular.mock.module('myAccount'));
 
   beforeEach(() => {
     angular.mock.module($provide => {
