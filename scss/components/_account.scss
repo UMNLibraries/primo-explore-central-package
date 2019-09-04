@@ -31,32 +31,6 @@ prm-personal-info {
   }
 }
 
-// make the loan & request title links appear not clickable
-prm-loans, 
-prm-requests {
-
-  md-list-item {
-    .md-list-item-with-checkbox .title-row.is-hovered prm-icon {
-      opacity: 0;
-    } 
-    &.md-clickable:hover {
-      cursor: inherit;
-    }
-  }
-
-  h3 a {
-    color: inherit;
-
-    &:hover {
-      color: inherit;
-      background-color: inherit;
-      box-shadow: none;
-      cursor: inherit;
-      padding-bottom: none;
-    }
-  }
-}
-
 courses .tiles-grid-tile .tile-content md-list-item {
   border-bottom: none;
   cursor: default;
