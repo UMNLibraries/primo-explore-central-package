@@ -1,5 +1,5 @@
 md-toast.blogger-notification {
-  background-color: #ffcc33;
+  background-color: $light-gold;
 	font-size: 1.25em;
 	position: relative;
 }
@@ -11,6 +11,5 @@ md-toast.blogger-notification .md-button {
 	min-height: auto;
 	line-height: inherit;
 	font-size: inherit;
-	color: #7a0019;
+	color: $maroon;
 }
-
