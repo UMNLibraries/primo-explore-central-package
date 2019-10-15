@@ -22,3 +22,13 @@ prm-alma-mashup iframe {
 
 prm-alma-more-inst {display: none;}
 div.full-view-section#tags {display: none;}
+
+.Almaviewit prm-login-alma-mashup {
+  display: none!important;
+}
+
+.Almagetit prm-login-alma-mashup .ng-hide {
+  display: block!important;
+  text-align: center;
+  line-height: 40px;
+}
