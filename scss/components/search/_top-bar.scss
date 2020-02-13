@@ -7,11 +7,7 @@ prm-search-bookmark-filter #favorites-button:before {background-color: $dark-gol
 button[aria-label="Tags"] {display: none;}
 
 prm-logo { 
-  div.product-logo {
-    display:none;
-  }
-  div.product-logo-local {
-    display: block;
+  #banner {
     a:hover {
       box-shadow: none;
       background-color: transparent;
