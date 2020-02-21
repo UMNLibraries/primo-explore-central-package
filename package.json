@@ -29,9 +29,10 @@
     "karma-jasmine": "1.0.2",
     "karma-jasmine-jquery": "0.1.1",
     "karma-spec-reporter": "0.0.31",
-    "protractor": "^5.4.2"
+    "protractor": "^5.4.3"
   },
   "dependencies": {
+    "lodash.uniqby": "^4.7.0",
     "primo-explore-hathitrust-availability": "^2.3.0"
   },
   "scripts": {
