@@ -15,6 +15,17 @@ const courses = JSON.parse(`
   "term": "1183",
   "enrollCampus": "UMNTC",
   "courseCampus": "UMNTC",
+  "courseId": "020002",
+  "subject": "NURS",
+  "courseNumber": "7610",
+  "section": "001",
+  "sectionType": "LEC"
+},
+{
+  "role": "Student",
+  "term": "1183",
+  "enrollCampus": "UMNTC",
+  "courseCampus": "UMNTC",
   "courseId": "025072",
   "subject": "COMM",
   "courseNumber": "3645W",
@@ -69,10 +80,11 @@ describe('Courses Component', () => {
     scope.$apply(() => controller.loadCourses());
   }
 
-  it('should list sorted courses when available', () => {
+  it('should list sorted, de-duplicated courses when available', () => {
     mockCourses();
     loadCourses();
     const listItems = element.find('md-list-item');
+    expect(listItems.length).toEqual(3);
     expect(listItems[0].innerHTML).toContain('COMM 3645W');
     expect(listItems[1].innerHTML).toContain('NURS 7610');
     expect(listItems[2].innerHTML).toContain('PUBH 3102');

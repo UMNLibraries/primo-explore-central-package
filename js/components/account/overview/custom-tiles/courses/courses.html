@@ -10,7 +10,7 @@
       </div>
       <div layout="column" layout-align="center center">
         <md-list>
-          <md-list-item ng-repeat="course in $ctrl.courses | orderBy:['subject', 'courseNumber']">
+          <md-list-item ng-repeat="course in $ctrl.courses | orderBy:['subject', 'courseNumber'] | uniqByKeys:['subject', 'courseNumber']">
             <a class="" ng-href="https://www.lib.umn.edu/course/{{course.subject}}/{{course.courseNumber}}">
               {{course.subject}} {{course.courseNumber}}
             </a>
