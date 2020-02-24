@@ -13,7 +13,7 @@ Custom JavaScript, HTML, CSS, and images for the Primo AngularJS UI. The files i
     npm install
     ```
 
-    *Note that the Primo Development Environment only works with node.js version 6 at this time*.
+    *Note that the Primo Development Environment only works with node.js version 8 at this time*.
 
 2. From the project's root directory, clone this repository to `primo-explore/custom/CENTRAL_PACKAGE`:
 
