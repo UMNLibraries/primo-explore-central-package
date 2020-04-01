@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "lodash.uniqby": "^4.7.0",
-    "primo-explore-hathitrust-availability": "^2.3.0"
+    "primo-explore-hathitrust-availability": "^2.4.0"
   },
   "scripts": {
     "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu' --saml --useScss",
