@@ -5,7 +5,6 @@ class BrowzineController {
   }
 
   $onInit() {
-    console.log('SCOPE: ', this.$scope);
     this.browzineService.handleSearchResult(this.$scope);
   }
 }

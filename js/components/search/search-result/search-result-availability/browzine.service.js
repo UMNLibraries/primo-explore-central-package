@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /**
  * An attempt to encapsulate the Browzine/LibKey integration. Vender instructions:
  * https://thirdiron.atlassian.net/wiki/spaces/BrowZineAPIDocs/pages/79200260/Ex+Libris+Primo+Integration
@@ -17,10 +18,25 @@
  */
 
 const configure = (window) => {
+  const institution =
+    window.appConfig['primo-view']['institution']['institution-code'];
+
+  const [id, key] = (() => {
+    switch (institution) {
+      case 'TWINCITIES':
+        return ['56', 'a17692c2-8e40-45b4-a83e-9152ab39ecbd'];
+      case 'DULUTH':
+        return ['2221', 'e71300f3-5817-4013-b828-7edc87f493e1'];
+      case 'MORRIS':
+        return ['2222', '61dab944-075d-4398-bfb7-d2c5cf09535a'];
+      case 'CROOKSTON':
+        return ['2223', '521fef68-181c-4f37-9a74-46661fc98abc'];
+    }
+  })();
+
   window.browzine = {
-    // TODO
-    api: 'https://public-api.thirdiron.com/public/v1/libraries/XXX',
-    apiKey: 'ENTER API KEY',
+    api: `https://public-api.thirdiron.com/public/v1/libraries/${id}`,
+    apiKey: key,
     journalCoverImagesEnabled: true,
     journalBrowZineWebLinkTextEnabled: true,
     journalBrowZineWebLinkText: 'View Journal Contents',
@@ -31,9 +47,9 @@ const configure = (window) => {
     articleLinkEnabled: true,
     articleLinkText: 'Read Article',
     printRecordsIntegrationEnabled: true,
-    // TODO
+    // TODO: need to set this up if we want to use the unpaywall stuff...
     unpaywallEmailAddressKey: 'enter-your-email@your-institution-domain.edu',
-    articlePDFDownloadViaUnpaywallEnabled: true,
+    articlePDFDownloadViaUnpaywallEnabled: false, // Disabled for now
     articlePDFDownloadViaUnpaywallText: 'Download PDF (via Unpaywall)',
     articleLinkViaUnpaywallEnabled: true,
     articleLinkViaUnpaywallText: 'Read Article (via Unpaywall)',
@@ -68,7 +84,7 @@ class BrowzineService {
 
   /**
    * This is where the Browzine/LibKey integration does its magic.
-   * 
+   *
    * @param {Object} scope - An AngularJS $scope object. The scope is assumed
    * to belong to a PrmSearchAvailabilityLineAfter component, with a parentCtrl
    * property.
