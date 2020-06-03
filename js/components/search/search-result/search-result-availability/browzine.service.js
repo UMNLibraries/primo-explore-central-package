@@ -21,7 +21,7 @@ const configure = (window) => {
   const institution =
     window.appConfig['primo-view']['institution']['institution-code'];
 
-  const [id, key] = (() => {
+  const [id, apiKey] = (() => {
     switch (institution) {
       case 'TWINCITIES':
         return ['56', 'a17692c2-8e40-45b4-a83e-9152ab39ecbd'];
@@ -36,7 +36,7 @@ const configure = (window) => {
 
   window.browzine = {
     api: `https://public-api.thirdiron.com/public/v1/libraries/${id}`,
-    apiKey: key,
+    apiKey,
     journalCoverImagesEnabled: true,
     journalBrowZineWebLinkTextEnabled: true,
     journalBrowZineWebLinkText: 'View Journal Contents',
@@ -47,9 +47,8 @@ const configure = (window) => {
     articleLinkEnabled: true,
     articleLinkText: 'Read Article',
     printRecordsIntegrationEnabled: true,
-    // TODO: need to set this up if we want to use the unpaywall stuff...
-    unpaywallEmailAddressKey: 'enter-your-email@your-institution-domain.edu',
-    articlePDFDownloadViaUnpaywallEnabled: false, // Disabled for now
+    unpaywallEmailAddressKey: 'almaprim@umn.edu',
+    articlePDFDownloadViaUnpaywallEnabled: true,
     articlePDFDownloadViaUnpaywallText: 'Download PDF (via Unpaywall)',
     articleLinkViaUnpaywallEnabled: true,
     articleLinkViaUnpaywallText: 'Read Article (via Unpaywall)',
