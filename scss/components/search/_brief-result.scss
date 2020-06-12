@@ -21,3 +21,11 @@ prm-brief-result-container {
     white-space: pre;
   }
 }
+
+.result-item-actions {
+  .pin-button {
+    md-icon {
+      transform: rotate(0) !important;
+    }
+  }
+}
