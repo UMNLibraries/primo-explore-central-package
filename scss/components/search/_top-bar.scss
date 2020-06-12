@@ -32,3 +32,11 @@ prm-main-menu {
     font-weight: bold;
   }
 }
+
+// don't rotate the overridden "pin" icon
+prm-search-bookmark-filter #favorites-button md-icon {
+  transform: rotate(0) !important;
+} 
+.prm-user-menu-content prm-icon.rotate-25 md-icon {
+  transform: rotate(0) !important;
+}
