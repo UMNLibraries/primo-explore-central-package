@@ -29,11 +29,11 @@
     "karma-jasmine": "1.0.2",
     "karma-jasmine-jquery": "0.1.1",
     "karma-spec-reporter": "0.0.31",
-    "protractor": "^5.4.3"
+    "protractor": "^5.4.4"
   },
   "dependencies": {
     "lodash.uniqby": "^4.7.0",
-    "primo-explore-hathitrust-availability": "^2.5.0"
+    "primo-explore-hathitrust-availability": "^2.6.3"
   },
   "scripts": {
     "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu' --saml --useScss",
