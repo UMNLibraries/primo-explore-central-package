@@ -18,6 +18,14 @@ const requestsStub = [
   },
 ];
 
+const articlesStub = [
+  {
+    txnNum: 1582298,
+    title: 'This is an article title',
+    author: 'Some Author',
+  },
+];
+
 const proxyBaseUrl = 'https://ezproxy.lib.umn.edu/login?qurl=';
 
 class ILLiad {
@@ -31,19 +39,31 @@ class ILLiad {
   getRequests() {
     /*
     const url = `${this.baseUrl}/ill-requests`;
-    this.$http
+    return this.$http
       .get(url, { withCredentials: true, cache: true })
-      .then(deferred.resolve(requestsStub));
+      .then(() => {
+        return ...;
+      });
       */
     return this.$q.resolve(requestsStub);
   }
 
-  getArticles() {}
+  getArticles() {
+    /*
+    const url = `${this.baseUrl}/ill-articles`;
+    return this.$http
+      .get(url, { withCredentials: true, cache: true })
+      .then(() => {
+        return ...
+      });
+      */
+    return this.$q.resolve(articlesStub);
+  }
 
   /**
-   * Returns the ILLiad URL for a given request (or the "all requests" page if no 
+   * Returns the ILLiad URL for a given request (or the "all requests" page if no
    * transaction number is provided).
-   * @param {number} txnNum (optional) A ILLiad transaction number for a request
+   * @param {number} txnNum (optional) An ILLiad transaction number for a request
    */
   getRequestPageUrl(txnNum) {
     if (txnNum) {
@@ -58,6 +78,29 @@ class ILLiad {
         proxyBaseUrl +
         encodeURIComponent(
           'https://umn.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=62'
+        )
+      );
+    }
+  }
+
+  /**
+   * Returns the URL for a given article (or the "available online" page if no
+   * transaction number is provided).
+   * @param {number} txnNum (optional) An ILLiad transaction number for an article
+   */
+  getArticlePageUrl(txnNum) {
+    if (txnNum) {
+      return (
+        proxyBaseUrl +
+        encodeURIComponent(
+          `https://umn.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=75&Value=${txnNum}`
+        )
+      );
+    } else {
+      return (
+        proxyBaseUrl +
+        encodeURIComponent(
+          'https://umn.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=64'
         )
       );
     }
