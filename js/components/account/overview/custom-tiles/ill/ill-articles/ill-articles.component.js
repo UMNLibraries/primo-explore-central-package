@@ -1,11 +1,12 @@
 import template from './ill-articles.html';
 
-// TODO: limit the number of requests / articles that display?
+const MAX_ARTICLES_TO_DISPLAY = 3;
 
 class IllArticlesController {
   constructor(illiad, $window) {
     this.illiad = illiad;
     this.$window = $window;
+    this.maxDisplay = MAX_ARTICLES_TO_DISPLAY;
     this.articles = [];
   }
 

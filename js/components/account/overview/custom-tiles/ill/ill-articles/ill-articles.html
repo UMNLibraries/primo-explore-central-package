@@ -3,7 +3,11 @@
     <div class="tile-content" layout="column">
       <div class="tile-header" layout="column">
         <div layout="row" layout-align="space-between">
-          <h2 class="header-link light-text" ng-click="$ctrl.goToArticlePage()" tabindex="0">
+          <h2
+            class="header-link light-text"
+            ng-click="$ctrl.goToArticlePage()"
+            tabindex="0"
+          >
             <span>Digital Delivery</span>
           </h2>
         </div>
@@ -17,7 +21,7 @@
         ></prm-spinner>
         <md-list-item
           class="md-2-line"
-          ng-repeat="article in $ctrl.articles"
+          ng-repeat="article in $ctrl.articles | limitTo:$ctrl.maxDisplay"
           ng-click="$ctrl.goToArticlePage(article.txnNum)"
           class="display-block"
         >
@@ -39,6 +43,21 @@
       >
         <div><span>There are no documents</span></div>
       </div>
+      <md-button
+        class="button-with-icon prm-links overflow-visible"
+        layout="row"
+        layout-align="center center"
+        ng-if="$ctrl.articles.length > $ctrl.maxDisplay"
+        ng-click="$ctrl.goToArticlePage()"
+        aria-label="all articles"
+        ><span>View all {{ $ctrl.articles.length }} articles</span>
+        <prm-icon
+          class="arrow-icon"
+          icon-type="{{::$ctrl.accountIcons.arrowRightIcon.type}}"
+          svg-icon-set="{{::$ctrl.accountIcons.arrowRightIcon.iconSet}}"
+          icon-definition="{{::$ctrl.accountIcons.arrowRightIcon.icon}}"
+        ></prm-icon>
+      </md-button>
     </div>
   </div>
 </shib-auth>
