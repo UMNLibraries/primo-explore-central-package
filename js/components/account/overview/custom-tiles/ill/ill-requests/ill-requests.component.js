@@ -1,5 +1,7 @@
 import template from './ill-requests.html';
 
+// TODO: limit the number of requests / articles that display?
+
 class IllRequestsController {
   constructor(illiad, $window) {
     this.illiad = illiad;
@@ -7,19 +9,16 @@ class IllRequestsController {
     this.requests = [];
   }
 
-  $onInit() {
-    this.inProgress = true;
-  }
-
   hasRequests() {
     return Array.isArray(this.requests) && this.requests.length > 0;
   }
 
   loadRequests() {
+    this.loading = true;
     this.illiad
       .getRequests()
       .then((requests) => (this.requests = requests))
-      .finally(() => (this.inProgress = false));
+      .finally(() => (this.loading = false));
   }
 
   goToRequestPage(txnNum) {
