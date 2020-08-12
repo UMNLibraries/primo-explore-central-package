@@ -38,9 +38,9 @@ const configure = (window) => {
     api: `https://public-api.thirdiron.com/public/v1/libraries/${id}`,
     apiKey,
     journalCoverImagesEnabled: true,
-    journalBrowZineWebLinkTextEnabled: true,
+    journalBrowZineWebLinkTextEnabled: false,
     journalBrowZineWebLinkText: 'View Journal Contents',
-    articleBrowZineWebLinkTextEnabled: true,
+    articleBrowZineWebLinkTextEnabled: false,
     articleBrowZineWebLinkText: 'View Issue Contents',
     articlePDFDownloadLinkEnabled: true,
     articlePDFDownloadLinkText: 'Download PDF',
@@ -49,15 +49,15 @@ const configure = (window) => {
     printRecordsIntegrationEnabled: true,
     unpaywallEmailAddressKey: 'almaprim@umn.edu',
     articlePDFDownloadViaUnpaywallEnabled: true,
-    articlePDFDownloadViaUnpaywallText: 'Download PDF (via Unpaywall)',
+    articlePDFDownloadViaUnpaywallText: 'Download Open Access PDF',
     articleLinkViaUnpaywallEnabled: true,
-    articleLinkViaUnpaywallText: 'Read Article (via Unpaywall)',
+    articleLinkViaUnpaywallText: 'Read Open Access Article',
     articleAcceptedManuscriptPDFViaUnpaywallEnabled: true,
     articleAcceptedManuscriptPDFViaUnpaywallText:
-      'Download PDF (Accepted Manuscript via Unpaywall)',
+      'Download Open Access PDF (Accepted Manuscript)',
     articleAcceptedManuscriptArticleLinkViaUnpaywallEnabled: true,
     articleAcceptedManuscriptArticleLinkViaUnpaywallText:
-      'Read Article (Accepted Manuscript via Unpaywall)',
+      'Read Open Access Article (Accepted Manuscript)',
   };
 };
 
