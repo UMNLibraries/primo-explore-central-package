@@ -40,3 +40,12 @@ courses .tiles-grid-tile .tile-content md-list-item {
     background-color: unset;
   }
 }
+
+// don't show icons in the empty tiles
+prm-account-overview {
+  .tiles-grid-tile, .message-with-icon {
+    prm-icon.giant-icon {
+      display: none;
+    }
+  }
+}
