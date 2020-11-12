@@ -13,7 +13,6 @@ class HidePcAvailabilityController {
   }
 
   $onInit() {
-    console.log('hasInst: ', exceptions.entries());
     if (exceptions.has(this.institution) || this.overridden) {
       this.prmFacetCtrl.showPcAvailability = true;
     } else {
@@ -22,7 +21,7 @@ class HidePcAvailabilityController {
   }
 
   get overridden() {
-    return this.$location.search()['showExpand'] == true;
+    return this.$location.search()['showExpand'] == true || this.$location.host().startsWith('primo-test');
   }
 }
 
