@@ -3,7 +3,10 @@ const NEW_PARAM = '&req.skin=umn_nui';
 
 class ChangeAlmaSkinController {
   $onInit() {
-    if (this.hasLinkElement() && this.prmFullViewServiceContainerCtrl.isMashupLink()) {
+    if (
+      this.hasLinkElement() &&
+      this.prmFullViewServiceContainerCtrl.isMashupLink()
+    ) {
       let oldUrl = this.link;
       if (!oldUrl.includes(NEW_PARAM)) {
         this.link = oldUrl.replace(OLD_PARAM, NEW_PARAM);
@@ -12,7 +15,8 @@ class ChangeAlmaSkinController {
   }
 
   get link() {
-    return this.prmFullViewServiceContainerCtrl.service.linkElement.links[0].link;
+    return this.prmFullViewServiceContainerCtrl.service.linkElement.links[0]
+      .link;
   }
 
   set link(val) {
@@ -22,12 +26,11 @@ class ChangeAlmaSkinController {
   hasLinkElement() {
     return !!this.prmFullViewServiceContainerCtrl.service.linkElement;
   }
-
 }
 
 let ChangeAlmaSkin = {
-  require: {prmFullViewServiceContainerCtrl: '^prmFullViewServiceContainer'},
-  controller: ChangeAlmaSkinController
+  require: { prmFullViewServiceContainerCtrl: '^prmFullViewServiceContainer' },
+  controller: ChangeAlmaSkinController,
 };
 
 export default ChangeAlmaSkin;
