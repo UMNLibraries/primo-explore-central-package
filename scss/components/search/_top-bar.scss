@@ -1,12 +1,20 @@
 // pin animation colors
-.pinDummy prm-icon {color: #809FA6;}
-.pinDummy:before {background-color: $dark-gold;}
-prm-search-bookmark-filter #favorites-button:before {background-color: $dark-gold;} 
+.pinDummy prm-icon {
+  color: #809fa6;
+}
+.pinDummy:before {
+  background-color: $dark-gold;
+}
+prm-search-bookmark-filter #favorites-button:before {
+  background-color: $dark-gold;
+}
 
 // hide "tags"
-button[aria-label="Tags"] {display: none;}
+button[aria-label='Tags'] {
+  display: none;
+}
 
-prm-logo { 
+prm-logo {
   #banner {
     a:hover {
       box-shadow: none;
@@ -27,10 +35,15 @@ prm-main-menu {
   }
 }
 
-// don't rotate the overridden "pin" icon
-prm-search-bookmark-filter #favorites-button md-icon {
-  transform: rotate(0) !important;
-} 
+prm-search-bookmark-filter #favorites-button {
+  md-icon {
+    transform: rotate(0) !important; //don't rotate the overridden "pin" icon
+  }
+  &:hover,
+  &:focus {
+    box-shadow: none; //the shadow looks goofy with our header color
+  }
+}
 .prm-user-menu-content prm-icon.rotate-25 md-icon {
   transform: rotate(0) !important;
 }
