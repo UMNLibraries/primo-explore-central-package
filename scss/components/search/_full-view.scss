@@ -11,7 +11,10 @@
 #virtualBrowse {order: 7;}
 #links {order: 8;}
 
-.services-index-under { display: none; }
+.services-index-under {
+  button:not(.accessible-close) { display: none; }
+  button.accessible-close.md-focused { background-color: rgb(58, 58, 58) !important; }
+}
 .full-view-section-content { padding-left: 0 !important; }
 
 prm-alma-mashup iframe {
@@ -31,4 +34,12 @@ div.full-view-section#tags {display: none;}
   display: block!important;
   text-align: center;
   line-height: 40px;
+}
+
+// overriding some weirdness in the OTB style...
+prm-action-list button.md-button.md-primary {
+  &:hover:not([disabled]), 
+  &:focus:not([disabled]) {
+    background-color: rgb(58, 58, 58);
+  }
 }

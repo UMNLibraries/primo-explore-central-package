@@ -1,18 +1,22 @@
 prm-facet {
   .sidebar-inner-wrapper {
-    padding-right: .25em;
+    padding-right: 0.25em;
   }
 }
 
-prm-facet-exact, 
+prm-facet-exact,
 prm-facet-range {
+  h3.section-title-header {
+    margin-right: 0;
+  }
+
   & > div {
     background-color: #fff;
   }
 
   div.section-content {
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 
     button.button-exclude::before {
       background-color: transparent !important;
@@ -25,12 +29,17 @@ prm-facet-range {
     border-radius: 0;
     box-shadow: 1px;
 
+    &:hover,
+    &:focus {
+      background-color: #dbdbdb !important;
+    }
+
     & > div {
       justify-content: space-between;
     }
   }
 
-  div.md-chips, 
+  div.md-chips,
   div.expand-section-button,
   .md-chip > .md-range-content {
     padding-left: 1em;

@@ -17,11 +17,16 @@
   }
 }
 
+// full display overlay
 md-backdrop.md-opaque {
   background-color: #000;
 }
+.md-dialog-container.fixed-container {
+  background-color: rgba(0, 0, 0, 0.75);
+}
 
-// override the MD stylesheets and us a normal weight for headers 
-h2, h4 {
+// override the MD stylesheets and us a normal weight for headers
+h2,
+h4 {
   font-weight: 400 !important;
 }
