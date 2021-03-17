@@ -8,7 +8,7 @@ prm-account-links {
     min-height: 15px;
     width: 15px;
     min-width: 15px;
-    margin-left: .2em;
+    margin-left: 0.2em;
   }
 }
 
@@ -20,12 +20,13 @@ prm-personal-info {
 
   // hide language option
   md-card:not(#personalDetails) {
-    display:none;
+    display: none;
   }
 
-  //hide letter options 
-  div, md-divder {
-    &[ng-if="$ctrl.showActionSection()"] {
+  //hide letter options
+  div,
+  md-divder {
+    &[ng-if='$ctrl.showActionSection()'] {
       display: none !important;
     }
   }
@@ -34,7 +35,7 @@ prm-personal-info {
 courses .tiles-grid-tile .tile-content md-list-item {
   border-bottom: none;
   cursor: default;
-  padding-bottom: .75em;
+  padding-bottom: 0.75em;
 
   &:hover {
     background-color: unset;
@@ -43,9 +44,27 @@ courses .tiles-grid-tile .tile-content md-list-item {
 
 // don't show icons in the empty tiles
 prm-account-overview {
-  .tiles-grid-tile, .message-with-icon {
+  .tiles-grid-tile,
+  .message-with-icon {
     prm-icon.giant-icon {
       display: none;
+    }
+  }
+}
+
+// accommodate fines note
+prm-fines-overview {
+  display: inline-block;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+
+  prm-fines-overview-after {
+    section {
+      display: inline-block;
+      margin-left: 0.5em;
+      position: relative;
+      top: -1em;
     }
   }
 }
