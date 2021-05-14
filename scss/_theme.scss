@@ -6,14 +6,6 @@
 
   button {
     color: $maroon;
-
-    &:hover:not([disabled]) {
-      color: inherit;
-    }
-
-    &:focused:not([disabled]) {
-      color: inherit;
-    }
   }
 }
 
