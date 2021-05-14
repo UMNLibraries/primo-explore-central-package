@@ -1,39 +1,69 @@
-.full-view-inner-container{
+.full-view-inner-container {
   display: flex;
   flex-direction: column;
 }
-#getit_link1_0 {order: 1;}
-#getit_link1_1 {order: 2;}
-#getit_link2 {order: 3;}
-#action_list {order: 4;}
-#citationTrails {order: 5;}
-#details {order: 6;}
-#virtualBrowse {order: 7;}
-#links {order: 8;}
+#getit_link1_0 {
+  order: 1;
+}
+#getit_link1_1 {
+  order: 2;
+}
+#getit_link2 {
+  order: 3;
+}
+#action_list {
+  order: 4;
+}
+#citationTrails {
+  order: 5;
+}
+#details {
+  order: 6;
+}
+#virtualBrowse {
+  order: 7;
+}
+#links {
+  order: 8;
+}
 
 .services-index-under {
-  button:not(.accessible-close) { display: none; }
-  button.accessible-close.md-focused { background-color: rgb(58, 58, 58) !important; }
+  button:not(.accessible-close) {
+    display: none;
+  }
+  button.accessible-close.md-focused {
+    background-color: rgb(58, 58, 58) !important;
+  }
 }
-.full-view-section-content { padding-left: 0 !important; }
+.full-view-section-content {
+  padding-left: 0 !important;
+}
 
-prm-alma-more-inst {display: none;}
-div.full-view-section#tags {display: none;}
+prm-alma-more-inst {
+  display: none;
+}
+div.full-view-section#tags {
+  display: none;
+}
 
 .Almaviewit prm-login-alma-mashup {
-  display: none!important;
+  display: none !important;
 }
 
 .Almagetit prm-login-alma-mashup .ng-hide {
-  display: block!important;
+  display: block !important;
   text-align: center;
   line-height: 40px;
 }
 
 // overriding some weirdness in the OTB style...
 prm-action-list button.md-button.md-primary {
-  &:hover:not([disabled]), 
+  &:hover:not([disabled]),
   &:focus:not([disabled]) {
     background-color: rgb(58, 58, 58);
   }
+}
+
+.recommendations-item a:focus {
+  text-decoration: underline;
 }
