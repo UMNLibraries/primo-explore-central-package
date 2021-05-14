@@ -1,0 +1,6 @@
+prm-alphabet-toolbar a {
+  &:hover,
+  &:focus {
+    box-shadow: none; //the shadow looks goofy with our header color
+  }
+}
