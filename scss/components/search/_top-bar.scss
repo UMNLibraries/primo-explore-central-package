@@ -35,7 +35,7 @@ prm-main-menu {
   }
 }
 
-prm-search-bookmark-filter #favorites-button {
+prm-search-bookmark-filter a {
   md-icon {
     transform: rotate(0) !important; //don't rotate the overridden "pin" icon
   }
