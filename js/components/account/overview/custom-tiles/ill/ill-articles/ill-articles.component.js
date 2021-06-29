@@ -10,6 +10,10 @@ class IllArticlesController {
     this.articles = [];
   }
 
+  $onInit() {
+    this.loadArticles();
+  }
+
   hasArticles() {
     return Array.isArray(this.articles) && this.articles.length > 0;
   }

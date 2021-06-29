@@ -10,6 +10,10 @@ class IllRequestsController {
     this.requests = [];
   }
 
+  $onInit() {
+    this.loadRequests();
+  }
+
   hasRequests() {
     return Array.isArray(this.requests) && this.requests.length > 0;
   }

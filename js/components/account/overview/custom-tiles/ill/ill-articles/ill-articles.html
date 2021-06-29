@@ -1,63 +1,61 @@
-<shib-auth on-auth="$ctrl.loadArticles()">
-  <div class="tiles-grid-tile">
-    <div class="tile-content" layout="column">
-      <div class="tile-header" layout="column">
-        <div layout="row" layout-align="space-between">
-          <h2
-            class="header-link light-text"
-            ng-click="$ctrl.goToArticlePage()"
-            tabindex="0"
-          >
-            <span>Digital Delivery</span>
-          </h2>
-        </div>
-      </div>
-      <md-list layout="column">
-        <prm-spinner
-          ng-if="$ctrl.loading"
-          class="default-loader dark-on-light overlay-cover no-text"
-          layout="row"
-          layout-align="center center"
-        ></prm-spinner>
-        <md-list-item
-          class="md-2-line"
-          ng-repeat="article in $ctrl.articles | limitTo:$ctrl.maxDisplay"
-          ng-click="$ctrl.goToArticlePage(article.txnNum)"
-          class="display-block"
+<div class="tiles-grid-tile">
+  <div class="tile-content" layout="column">
+    <div class="tile-header" layout="column">
+      <div layout="row" layout-align="space-between">
+        <h2
+          class="header-link light-text"
+          ng-click="$ctrl.goToArticlePage()"
+          tabindex="0"
         >
-          <span class="item-index">{{$index + 1}}</span>
-          <div class="md-list-item-text" layout-fill>
-            <h3 ng-if="article.title"><span>{{article.title}}</span></h3>
-            <h4 ng-if="article.author"><span>{{article.author}}</span></h4>
-          </div>
-        </md-list-item>
-      </md-list>
-      <div
-        ng-if="!$ctrl.hasArticles()"
-        ng-cloak
-        class="message-with-icon"
-        layout="column"
-        layout-align="center center"
-        layout-padding
-        layout-margin
-      >
-        <div><span>There are no documents</span></div>
+          <span>Digital Delivery</span>
+        </h2>
       </div>
-      <md-button
-        class="button-with-icon prm-links overflow-visible"
+    </div>
+    <md-list layout="column">
+      <prm-spinner
+        ng-if="$ctrl.loading"
+        class="default-loader dark-on-light overlay-cover no-text"
         layout="row"
         layout-align="center center"
-        ng-if="$ctrl.articles.length > $ctrl.maxDisplay"
-        ng-click="$ctrl.goToArticlePage()"
-        aria-label="all articles"
-        ><span>View all {{ $ctrl.articles.length }} articles</span>
-        <prm-icon
-          class="arrow-icon"
-          icon-type="{{::$ctrl.accountIcons.arrowRightIcon.type}}"
-          svg-icon-set="{{::$ctrl.accountIcons.arrowRightIcon.iconSet}}"
-          icon-definition="{{::$ctrl.accountIcons.arrowRightIcon.icon}}"
-        ></prm-icon>
-      </md-button>
+      ></prm-spinner>
+      <md-list-item
+        class="md-2-line"
+        ng-repeat="article in $ctrl.articles | limitTo:$ctrl.maxDisplay"
+        ng-click="$ctrl.goToArticlePage(article.txnNum)"
+        class="display-block"
+      >
+        <span class="item-index">{{$index + 1}}</span>
+        <div class="md-list-item-text" layout-fill>
+          <h3 ng-if="article.title"><span>{{article.title}}</span></h3>
+          <h4 ng-if="article.author"><span>{{article.author}}</span></h4>
+        </div>
+      </md-list-item>
+    </md-list>
+    <div
+      ng-if="!$ctrl.hasArticles()"
+      ng-cloak
+      class="message-with-icon"
+      layout="column"
+      layout-align="center center"
+      layout-padding
+      layout-margin
+    >
+      <div><span>There are no documents</span></div>
     </div>
+    <md-button
+      class="button-with-icon prm-links overflow-visible"
+      layout="row"
+      layout-align="center center"
+      ng-if="$ctrl.articles.length > $ctrl.maxDisplay"
+      ng-click="$ctrl.goToArticlePage()"
+      aria-label="all articles"
+      ><span>View all {{ $ctrl.articles.length }} articles</span>
+      <prm-icon
+        class="arrow-icon"
+        icon-type="{{::$ctrl.accountIcons.arrowRightIcon.type}}"
+        svg-icon-set="{{::$ctrl.accountIcons.arrowRightIcon.iconSet}}"
+        icon-definition="{{::$ctrl.accountIcons.arrowRightIcon.icon}}"
+      ></prm-icon>
+    </md-button>
   </div>
-</shib-auth>
+</div>
