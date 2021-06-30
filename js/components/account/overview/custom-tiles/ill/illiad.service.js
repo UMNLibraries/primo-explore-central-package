@@ -32,32 +32,48 @@ class ILLiad {
   constructor($http, $q) {
     this.$http = $http;
     this.$q = $q;
-    this.baseUrl = 'https://stacks.lib.umn.edu/userapi/current-user'; // TBD...
+    this.requestsUrl = '/primo_library/libweb/umn/ill-requests.jsp';
+    this.articlesUrl = '/primo_library/libweb/umn/ill-articles.jsp';
   }
 
-  // stubbing out the response for now...
+  /**
+   * Retrieves the current user's open ILL requests from ILLiad. 
+   * @returns {Array} List of objects with the following properties:
+   *  - txnNum
+   *  - title
+   *  - author
+   */
   getRequests() {
-    /*
-    const url = `${this.baseUrl}/ill-requests`;
     return this.$http
-      .get(url, { withCredentials: true, cache: true })
-      .then(() => {
-        return ...;
+      .get(this.requestsUrl)
+      .then(resp => {
+        return resp.data.map(data => ({
+          txnNum: data.TransactionNumber,
+          title: data.PhotoArticleTitle || data.LoanTitle,
+          author: data.PhotoArticleAuthor || data.LoanAuthor,
+        }));
       });
-      */
-    return this.$q.resolve(requestsStub);
+    //return this.$q.resolve(requestsStub);
   }
 
+  /**
+   * Retrieves the current user's ILL digital delivery articles from ILLiad. 
+   * @returns {Array} List of objects with the following properties:
+   *  - txnNum
+   *  - title
+   *  - author
+   */
   getArticles() {
-    /*
-    const url = `${this.baseUrl}/ill-articles`;
     return this.$http
-      .get(url, { withCredentials: true, cache: true })
-      .then(() => {
-        return ...
+      .get(this.articles)
+      .then(resp => {
+        return resp.data.map(data => ({
+          txnNum: data.TransactionNumber,
+          title: data.PhotoArticleTitle,
+          author: data.PhotoArticleAuthor,
+        }));
       });
-      */
-    return this.$q.resolve(articlesStub);
+    //return this.$q.resolve(articlesStub);
   }
 
   /**
