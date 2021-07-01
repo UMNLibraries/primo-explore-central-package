@@ -39,9 +39,9 @@ class ILLiad {
   /**
    * Retrieves the current user's open ILL requests from ILLiad. 
    * @returns {Array} List of objects with the following properties:
-   *  - txnNum
-   *  - title
-   *  - author
+   *  - txnNum {number}
+   *  - title {string}
+   *  - author {string}
    */
   getRequests() {
     return this.$http
@@ -50,7 +50,7 @@ class ILLiad {
         return resp.data.map(data => ({
           txnNum: data.TransactionNumber,
           title: data.PhotoArticleTitle || data.LoanTitle,
-          author: data.PhotoArticleAuthor || data.LoanAuthor,
+          author: data.PhotoArticleAuthor || data.LoanAuthor
         }));
       });
     //return this.$q.resolve(requestsStub);
@@ -59,13 +59,13 @@ class ILLiad {
   /**
    * Retrieves the current user's ILL digital delivery articles from ILLiad. 
    * @returns {Array} List of objects with the following properties:
-   *  - txnNum
-   *  - title
-   *  - author
+   *  - txnNum {number}
+   *  - title {string}
+   *  - author {string}
    */
   getArticles() {
     return this.$http
-      .get(this.articles)
+      .get(this.articlesUrl)
       .then(resp => {
         return resp.data.map(data => ({
           txnNum: data.TransactionNumber,
