@@ -1,37 +1,8 @@
-const requestsStub = [
-  {
-    txnNum: 1246493,
-    title:
-      'Designing data-intensive applications - the big ideas behind reliable, scalable, and maintainable systems',
-    author: 'Kleppmann, Martin',
-  },
-  {
-    txnNum: 1480237,
-    title:
-      'Domain-driven design - tackling complexity in the heart of software',
-    author: 'Evans, Erik',
-  },
-  {
-    txnNum: 1581977,
-    title: 'This is a test title',
-    author: 'Some Author',
-  },
-];
-
-const articlesStub = [
-  {
-    txnNum: 1582298,
-    title: 'This is an article title',
-    author: 'Some Author',
-  },
-];
-
 const proxyBaseUrl = 'https://ezproxy.lib.umn.edu/login?qurl=';
 
 class ILLiad {
-  constructor($http, $q) {
+  constructor($http) {
     this.$http = $http;
-    this.$q = $q;
     this.requestsUrl = '/primo_library/libweb/umn/ill-requests.jsp';
     this.articlesUrl = '/primo_library/libweb/umn/ill-articles.jsp';
   }
@@ -53,7 +24,6 @@ class ILLiad {
           author: data.PhotoArticleAuthor || data.LoanAuthor
         }));
       });
-    //return this.$q.resolve(requestsStub);
   }
 
   /**
@@ -73,7 +43,6 @@ class ILLiad {
           author: data.PhotoArticleAuthor,
         }));
       });
-    //return this.$q.resolve(articlesStub);
   }
 
   /**
@@ -123,6 +92,6 @@ class ILLiad {
   }
 }
 
-ILLiad.$inject = ['$http', '$q'];
+ILLiad.$inject = ['$http'];
 
 export default ILLiad;
