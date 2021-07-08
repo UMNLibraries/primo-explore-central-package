@@ -2,6 +2,7 @@ import GoogleAnalytics from './google-analytics/google-analytics.module';
 import BloggerNotifications from './blogger-notifications/blogger-notifications.module';
 import Redirect from './redirect/redirect.module';
 import AlmaIframeMessenger from './alma-iframe-messenger/alma-iframe-messenger.module';
+import Config from './config/config.module';
 import Components from './components/components.module';
 
 angular.module('centralCustom', [ 
@@ -9,6 +10,7 @@ angular.module('centralCustom', [
   BloggerNotifications,
   Redirect,
   AlmaIframeMessenger,
+  Config,
   Components,
 ]);
 
