@@ -1,3 +1,4 @@
+import Ill from './ill.component';
 import ILLiad from './illiad.service.js';
 import IllRequests from './ill-requests/ill-requests.component';
 import IllArticles from './ill-articles/ill-articles.component';
@@ -7,4 +8,5 @@ export default angular
   .service('illiad', ILLiad)
   .component('illRequests', IllRequests)
   .component('illArticles', IllArticles)
+  .component('ill', Ill)
   .name;
