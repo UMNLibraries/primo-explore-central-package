@@ -62,7 +62,7 @@ describe('ILL Requests Component', () => {
    *
    * @param {number} n number of articles to create
    */
-  function mockRequests(n = 1) {
+  function stubRequests(n = 1) {
     requests = Array.from({ length: n }, (_, i) => ({
       txnNum: i,
       title: `Tets Title ${i}`,
@@ -72,7 +72,7 @@ describe('ILL Requests Component', () => {
   }
 
   it('should have a clickable title', () => {
-    mockRequests(0);
+    stubRequests(0);
 
     initializeComponent();
 
@@ -83,7 +83,7 @@ describe('ILL Requests Component', () => {
 
   it('should list articles', () => {
     const requestCount = 2;
-    mockRequests(requestCount);
+    stubRequests(requestCount);
 
     initializeComponent();
 
@@ -93,7 +93,7 @@ describe('ILL Requests Component', () => {
 
   it('should link to ILLiad requests', () => {
     const requestCount = 2;
-    mockRequests(requestCount);
+    stubRequests(requestCount);
 
     initializeComponent();
 
@@ -109,7 +109,7 @@ describe('ILL Requests Component', () => {
 
   it('should display a link to ILLiad when then number of requests exceeds the display threshold', () => {
     const requestCount = controller.maxDisplay + 1;
-    mockRequests(requestCount);
+    stubRequests(requestCount);
 
     initializeComponent();
 
@@ -123,7 +123,7 @@ describe('ILL Requests Component', () => {
 
   it('should display a message if there are no requests', () => {
     const requestCount = 0;
-    mockRequests(requestCount);
+    stubRequests(requestCount);
 
     initializeComponent();
 

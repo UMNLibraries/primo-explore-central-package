@@ -43,7 +43,7 @@ describe('ILL Articles Component', () => {
    *
    * @param {number} n number of articles to create
    */
-  function mockArticles(n = 1) {
+  function stubArticles(n = 1) {
     articles = Array.from({ length: n }, (_, i) => ({
       txnNum: i,
       title: `Tets Title ${i}`,
@@ -53,7 +53,7 @@ describe('ILL Articles Component', () => {
   }
 
   it('should have a clickable title', () => {
-    mockArticles(0);
+    stubArticles(0);
 
     initializeComponent();
 
@@ -64,7 +64,7 @@ describe('ILL Articles Component', () => {
 
   it('should list articles', () => {
     const articleCount = 2;
-    mockArticles(articleCount);
+    stubArticles(articleCount);
 
     initializeComponent();
 
@@ -74,7 +74,7 @@ describe('ILL Articles Component', () => {
 
   it('should link to full-text', () => {
     const articleCount = 2;
-    mockArticles(articleCount);
+    stubArticles(articleCount);
 
     initializeComponent();
 
@@ -90,7 +90,7 @@ describe('ILL Articles Component', () => {
 
   it('should display a link to ILLiad when then number of articles exceeds the display threshold', () => {
     const articleCount = controller.maxDisplay + 1;
-    mockArticles(articleCount);
+    stubArticles(articleCount);
 
     initializeComponent();
 
@@ -104,7 +104,7 @@ describe('ILL Articles Component', () => {
 
   it('should display a message if there are no articles', () => {
     const articleCount = 0;
-    mockArticles(articleCount);
+    stubArticles(articleCount);
 
     initializeComponent();
 
