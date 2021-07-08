@@ -7,7 +7,7 @@ import CampusCode from './campus-code';
 class Config {
   constructor($window) {
     this.appConfig = $window.appConfig;
-    this.viewProperties = new ViewProperties(
+    this.viewProperties = ViewProperties.of(
       this.appConfig['mapping-tables']['View Properties']
     );
     this.institution =
