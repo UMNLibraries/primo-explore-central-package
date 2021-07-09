@@ -98,7 +98,7 @@ describe('Courses Component', () => {
     loadCourses();
     expect(element.find('md-list-item').length).toBe(0);
     expect(element.find('prm-icon')[0]).toBeTruthy();
-    expect(element.html()).toContain('no courses');
+    expect(element.html()).toContain('no guides');
   });
 
 });
