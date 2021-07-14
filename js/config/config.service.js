@@ -12,6 +12,7 @@ class Config {
     );
     this.institution =
       this.appConfig['primo-view']['institution']['institution-code'];
+    this.institutionLibraryCodes = Object.keys(this.appConfig['institution-libraries']);
   }
 
   get showCustomAccountTiles() {
