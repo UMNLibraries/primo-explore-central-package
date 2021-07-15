@@ -10,9 +10,14 @@ class Config {
     this.viewProperties = ViewProperties.of(
       this.appConfig['mapping-tables']['View Properties']
     );
-    this.institution =
-      this.appConfig['primo-view']['institution']['institution-code'];
-    this.institutionLibraryCodes = Object.keys(this.appConfig['institution-libraries']);
+  }
+
+  get institution() {
+    return this.appConfig['primo-view']['institution']['institution-code'];
+  }
+
+  get institutionLibraryCodes() {
+    return Object.keys(this.appConfig['institution-libraries']);
   }
 
   get showCustomAccountTiles() {
