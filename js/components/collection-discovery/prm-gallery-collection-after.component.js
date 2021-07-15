@@ -1,4 +1,8 @@
-class PrmGalleryCollectionAfter {
+/**
+ * Removes a collection from the collection discovery landing page if it does not
+ * belong to the current view's campus. 
+ */
+class PrmGalleryCollectionAfterController {
   constructor(config) {
     this.config = config;
   }
@@ -24,9 +28,9 @@ class PrmGalleryCollectionAfter {
   }
 }
 
-PrmGalleryCollectionAfter.$inject = ['config'];
+PrmGalleryCollectionAfterController.$inject = ['config'];
 
 export default {
   bindings: { parentCtrl: '<' },
-  controller: PrmGalleryCollectionAfter,
+  controller: PrmGalleryCollectionAfterController,
 };
