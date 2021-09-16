@@ -1,5 +1,5 @@
 /**
- * Appends the "custom-tiles" template to the My Account Overview grid.
+ * Appends content to the end of the My Account Overview grid.
  *
  * This component (element directive) should be placed in any of the
  * prm-{tile}-overview-after components as a child element. For example:
@@ -9,7 +9,7 @@
  *
  */
 class InjectCustomTilesController {
-  constructor($window, $scope, $compile, $element, config) {
+  constructor($scope, $compile, $element, config) {
     this.$scope = $scope;
     this.$element = $element;
     this.$compile = $compile;
@@ -32,16 +32,8 @@ class InjectCustomTilesController {
     );
   }
 
-  get enableIlliad() {
-    return this.config.enableIlliad;
-  }
-
   get template() {
-    // show either the ILLiad-integration components or the generic ILL component.
-    let html = this.enableIlliad
-      ? '<ill-requests></ill-requests><ill-articles></ill-articles>'
-      : '<ill></ill>';
-    html += '<courses></courses>';
+    const html = '<courses></courses>';
     return this.$compile(html)(this.$scope);
   }
 
@@ -53,7 +45,6 @@ class InjectCustomTilesController {
 }
 
 InjectCustomTilesController.$inject = [
-  '$window',
   '$scope',
   '$compile',
   '$element',

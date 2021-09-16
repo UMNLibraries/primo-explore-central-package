@@ -1,3 +1,18 @@
+import template from './prm-loans-overview-after.html';
+
+class PrmLoansOverviewAfter {
+  constructor(config) {
+    this.config = config;
+  }
+
+  get enableIlliad() {
+    return this.config.enableIlliad;
+  }
+}
+
+PrmLoansOverviewAfter.$inject = ['config'];
+
 export default {
-  template: '<custom-tiles></custom-tiles>'
+  controller: PrmLoansOverviewAfter,
+  template: template,
 };
