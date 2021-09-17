@@ -27,7 +27,7 @@ class IllArticlesController {
   }
 
   goToArticlePage(txnNum) {
-    this.$window.location.href = this.illiad.getArticlePageUrl(txnNum);
+    this.$window.open(this.illiad.getArticlePageUrl(txnNum), '_blank');
   }
 }
 

@@ -33,16 +33,6 @@ describe('ILL Requests Component', () => {
   });
 
   beforeEach(() => {
-    angular.mock.module({
-      $window: {
-        location: {
-          href: '',
-        },
-      },
-    });
-  });
-
-  beforeEach(() => {
     angular.mock.module(function ($compileProvider) {
       $compileProvider.directive('translate', fakeTranslateDirective);
     });
@@ -56,6 +46,10 @@ describe('ILL Requests Component', () => {
       $window = $injector.get('$window');
       $q = $injector.get('$q');
     });
+  });
+
+  beforeEach(() => {
+    spyOn($window, 'open');
   });
 
   /**
@@ -78,7 +72,10 @@ describe('ILL Requests Component', () => {
 
     const title = element.find('h2');
     title.triggerHandler('click');
-    expect($window.location.href).toEqual(illiadService.getRequestPageUrl());
+    expect($window.open).toHaveBeenCalledWith(
+      illiadService.getRequestPageUrl(),
+      '_blank'
+    );
   });
 
   it('should list articles', () => {
@@ -101,8 +98,9 @@ describe('ILL Requests Component', () => {
     for (let i = 0; i < requestCount; i++) {
       const request = requests[i];
       listItems[i].click();
-      expect($window.location.href).toEqual(
-        illiadService.getRequestPageUrl(request.txnNum)
+      expect($window.open).toHaveBeenCalledWith(
+        illiadService.getRequestPageUrl(request.txnNum),
+        '_blank'
       );
     }
   });
@@ -118,7 +116,10 @@ describe('ILL Requests Component', () => {
     const button = element.find('md-button');
     expect(button.text().trim()).toEqual(`View all ${requestCount} requests`);
     button.triggerHandler('click');
-    expect($window.location.href).toEqual(illiadService.getRequestPageUrl());
+    expect($window.open).toHaveBeenCalledWith(
+      illiadService.getRequestPageUrl(),
+      '_blank'
+    );
   });
 
   it('should display a message if there are no requests', () => {

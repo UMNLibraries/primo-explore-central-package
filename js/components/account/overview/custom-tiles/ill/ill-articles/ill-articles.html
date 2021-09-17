@@ -8,6 +8,12 @@
           tabindex="0"
         >
           <span>Digital Delivery</span>
+          <prm-icon
+            external-link
+            icon-type="svg"
+            svg-icon-set="primo-ui"
+            icon-definition="open-in-new"
+          ></prm-icon>
         </h2>
       </div>
     </div>
@@ -29,6 +35,12 @@
           <h3 ng-if="article.title"><span>{{article.title}}</span></h3>
           <h4 ng-if="article.author"><span>{{article.author}}</span></h4>
         </div>
+        <prm-icon
+          external-link
+          icon-type="svg"
+          svg-icon-set="primo-ui"
+          icon-definition="open-in-new"
+        ></prm-icon>
       </md-list-item>
     </md-list>
     <div
@@ -51,10 +63,10 @@
       aria-label="all articles"
       ><span>View all {{ $ctrl.articles.length }} articles</span>
       <prm-icon
-        class="arrow-icon"
-        icon-type="{{::$ctrl.accountIcons.arrowRightIcon.type}}"
-        svg-icon-set="{{::$ctrl.accountIcons.arrowRightIcon.iconSet}}"
-        icon-definition="{{::$ctrl.accountIcons.arrowRightIcon.icon}}"
+        external-link
+        icon-type="svg"
+        svg-icon-set="primo-ui"
+        icon-definition="open-in-new"
       ></prm-icon>
     </md-button>
   </div>

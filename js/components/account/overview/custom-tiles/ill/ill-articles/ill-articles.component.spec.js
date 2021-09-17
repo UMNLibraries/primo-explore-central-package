@@ -13,16 +13,6 @@ describe('ILL Articles Component', () => {
   });
 
   beforeEach(() => {
-    angular.mock.module({
-      $window: {
-        location: {
-          href: '',
-        },
-      },
-    });
-  });
-
-  beforeEach(() => {
     angular.mock.inject(($injector) => {
       scope = $injector.get('$rootScope').$new();
       illiadService = $injector.get('illiad');
@@ -30,6 +20,10 @@ describe('ILL Articles Component', () => {
       $window = $injector.get('$window');
       $q = $injector.get('$q');
     });
+  });
+
+  beforeEach(() => {
+    spyOn($window, 'open');
   });
 
   function initializeComponent() {
@@ -59,7 +53,10 @@ describe('ILL Articles Component', () => {
 
     const title = element.find('h2');
     title.triggerHandler('click');
-    expect($window.location.href).toEqual(illiadService.getArticlePageUrl());
+    expect($window.open).toHaveBeenCalledWith(
+      illiadService.getArticlePageUrl(),
+      '_blank'
+    );
   });
 
   it('should list articles', () => {
@@ -82,8 +79,9 @@ describe('ILL Articles Component', () => {
     for (let i = 0; i < articleCount; i++) {
       const article = articles[i];
       listItems[i].click();
-      expect($window.location.href).toEqual(
-        illiadService.getArticlePageUrl(article.txnNum)
+      expect($window.open).toHaveBeenCalledWith(
+        illiadService.getArticlePageUrl(article.txnNum),
+        '_blank'
       );
     }
   });
@@ -99,7 +97,10 @@ describe('ILL Articles Component', () => {
     const button = element.find('md-button');
     expect(button.text().trim()).toEqual(`View all ${articleCount} articles`);
     button.triggerHandler('click');
-    expect($window.location.href).toEqual(illiadService.getArticlePageUrl());
+    expect($window.open).toHaveBeenCalledWith(
+      illiadService.getArticlePageUrl(),
+      '_blank'
+    );
   });
 
   it('should display a message if there are no articles', () => {

@@ -27,7 +27,7 @@ class IllRequestsController {
   }
 
   goToRequestPage(txnNum) {
-    this.$window.location.href = this.illiad.getRequestPageUrl(txnNum);
+    this.$window.open(this.illiad.getRequestPageUrl(txnNum), '_blank');
   }
 }
 

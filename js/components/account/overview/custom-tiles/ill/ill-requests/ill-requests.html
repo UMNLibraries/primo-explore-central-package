@@ -8,6 +8,12 @@
           tabindex="0"
         >
           <span>Pending Interlibrary Loan Requests</span>
+          <prm-icon
+            external-link
+            icon-type="svg"
+            svg-icon-set="primo-ui"
+            icon-definition="open-in-new"
+          ></prm-icon>
         </h2>
       </div>
     </div>
@@ -29,6 +35,12 @@
           <h3 ng-if="request.title"><span>{{request.title}}</span></h3>
           <h4 ng-if="request.author"><span>{{request.author}}</span></h4>
         </div>
+        <prm-icon
+          external-link
+          icon-type="svg"
+          svg-icon-set="primo-ui"
+          icon-definition="open-in-new"
+        ></prm-icon>
       </md-list-item>
     </md-list>
     <div
@@ -51,10 +63,10 @@
       aria-label="all requests"
       ><span>View all {{ $ctrl.requests.length }} requests</span>
       <prm-icon
-        class="arrow-icon"
-        icon-type="{{::$ctrl.accountIcons.arrowRightIcon.type}}"
-        svg-icon-set="{{::$ctrl.accountIcons.arrowRightIcon.iconSet}}"
-        icon-definition="{{::$ctrl.accountIcons.arrowRightIcon.icon}}"
+        external-link
+        icon-type="svg"
+        svg-icon-set="primo-ui"
+        icon-definition="open-in-new"
       ></prm-icon>
     </md-button>
   </div>
