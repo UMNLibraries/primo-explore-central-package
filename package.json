@@ -28,9 +28,8 @@
     "karma-chrome-launcher": "3.1.0",
     "karma-jasmine": "1.0.2",
     "karma-jasmine-jquery": "0.1.1",
-    "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.31",
-    "protractor": "^5.4.4",
+    "protractor": "^7.0.0",
     "puppeteer": "^10.4.0"
   },
   "dependencies": {
@@ -42,9 +41,8 @@
     "start-prod": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo.lib.umn.edu' --saml --useScss",
     "start-qa": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-qa.hosted.exlibrisgroup.com' --useScss",
     "test": "karma start --singleRun",
-    "test-e2e": "protractor e2e-tests/protractor.conf",
+    "test-e2e": "webdriver-manager update && protractor e2e-tests/protractor.conf",
     "pkg": "gulp create-package --browserify --view CENTRAL_PACKAGE --useScss",
-    "webdriver-update": "webdriver-manager update",
     "gen-color-scheme": "gulp app-css --view CENTRAL_PACKAGE --proxy 'https://primo-test.lib.umn.edu'"
   }
 }
