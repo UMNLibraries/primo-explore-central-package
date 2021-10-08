@@ -49,7 +49,7 @@ If you which to override any colors defined in this file, it's best to do so in 
 ## Running Tests
 
 ### Unit Tests
-`npm run test`
+`npm test`
 
 ### Functional (end-to-end) Tests
 `npm run test-e2e`
