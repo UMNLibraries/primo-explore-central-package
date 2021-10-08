@@ -19,7 +19,7 @@ describe('Top Bar', () => {
   describe('Logo', () => {
     it('should be clickable', () => {
       expect(
-        element(by.css('prm-logo-after a')).isPresent()
+        element(by.css('prm-logo a')).isPresent()
       ).toBeTruthy();
     });
   });
