@@ -1,41 +1,44 @@
-const PROXY_PREFIX = 'http://login.ezproxy.lib.umn.edu/login?auth=shibboleth&url=';
-
-function lookupOtool() {
-  let inst = window.appConfig['primo-view']['institution']['institution-code'];
-  let otools = {
-    TWINCITIES: 'umnbmlib',
-    DULUTH: 'umndlib',
-    CROOKSTON: 'mnumclib'
-  };
-  return otools[inst] || null;
-}
-
-function isPubmedUrl(url) {
-  return /pubmed.gov\/\d+$/.test(url);
-}
-
-function fixPubmedLinks(links) {
-  let otool = lookupOtool();
-  for (let i=0; i < links.length; i++) {
-    let url = links[i].linkURL;
-    if (otool && isPubmedUrl(url)) {
-      if (url.startsWith(PROXY_PREFIX)) url = url.substring(PROXY_PREFIX.length); 
-      url += '?otool=' + otool;
-      links[i].linkURL = url;
-    }
-  }
-}
-
-let PubmedLinkFix = {
-  require: {
-    prmServiceLinks: '^prmServiceLinks'
-  },
-  controller: class PubmedFixController {
-    $onInit() {
-      let links = this.prmServiceLinks.recordLinks;
-      fixPubmedLinks(links);
-    }
-  }
+const otools = {
+  TWINCITIES: 'umnbmlib',
+  DULUTH: 'umndlib',
+  CROOKSTON: 'mnumclib',
 };
 
-export default PubmedLinkFix;
+/**
+ * Appends an "outside tool" parameter PubMed URLs in the "links" section of
+ * the full display page. More info on the outside tool can be found here:
+ * https://www.ncbi.nlm.nih.gov/books/NBK3803/
+ */
+class PubmedLinkFixController {
+  constructor(config) {
+    this.config = config;
+    this.otool = otools[config.institution] || null;
+  }
+
+  $onInit() {
+    if (this.otool) this.fixPubmedLinks(this.prmServiceLinks.recordLinks);
+  }
+
+  isPubmedUrl(url) {
+    return /(ncbi\.nlm\.nih\.gov|pubmed\.gov)/.test(url);
+  }
+
+  fixPubmedLinks(links) {
+    for (let i = 0; i < links.length; i++) {
+      let url = links[i].linkURL;
+      if (this.isPubmedUrl(url)) {
+        url += '?otool=' + this.otool;
+        links[i].linkURL = url;
+      }
+    }
+  }
+}
+
+PubmedLinkFixController.$inject = ['config'];
+
+export default {
+  require: {
+    prmServiceLinks: '^prmServiceLinks',
+  },
+  controller: PubmedLinkFixController,
+};
