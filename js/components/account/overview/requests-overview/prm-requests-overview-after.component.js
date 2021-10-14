@@ -1,5 +1,4 @@
 import template from './prm-requests-overview-after.html';
-import CampusCode from '../../../../config/campus-code';
 
 class PrmRequestsOverviewAfter {
   constructor(config) {
@@ -11,10 +10,7 @@ class PrmRequestsOverviewAfter {
   }
 
   get showIllLink() {
-    return (
-      !this.config.enableIlliad &&
-      this.config.institution == CampusCode.TWINCITIES
-    );
+    return this.config.showIllLink;
   }
 }
 

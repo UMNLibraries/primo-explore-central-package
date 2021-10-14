@@ -30,6 +30,10 @@ class Config {
   get enableIlliad() {
     return this.viewProperties.getValue('umn-illiad-enable') === 'true';
   }
+
+  get showIllLink() {
+    return !this.enableIlliad && this.institution === CampusCode.TWINCITIES;
+  }
 }
 
 Config.$inject = ['$window'];
