@@ -87,7 +87,7 @@ describe('ILL Articles Component', () => {
   });
 
   it('should display a link to ILLiad when then number of articles exceeds the display threshold', () => {
-    const articleCount = controller.maxDisplay + 1;
+    const articleCount = 4;
     stubArticles(articleCount);
 
     initializeComponent();
