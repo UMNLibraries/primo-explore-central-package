@@ -34,6 +34,12 @@ class Config {
   get showIllLink() {
     return !this.enableIlliad && this.institution === CampusCode.TWINCITIES;
   }
+
+  get browzine() {
+    const id = this.viewProperties.getValue('umn-browzine-id');
+    const key = this.viewProperties.getValue('umn-browzine-key');
+    return {id, key};
+  }
 }
 
 Config.$inject = ['$window'];

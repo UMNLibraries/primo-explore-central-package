@@ -17,26 +17,10 @@
  *    DOM manipulation
  */
 
-const configure = (window) => {
-  const institution =
-    window.appConfig['primo-view']['institution']['institution-code'];
-
-  const [id, apiKey] = (() => {
-    switch (institution) {
-      case 'TWINCITIES':
-        return ['56', 'a17692c2-8e40-45b4-a83e-9152ab39ecbd'];
-      case 'DULUTH':
-        return ['2221', 'e71300f3-5817-4013-b828-7edc87f493e1'];
-      case 'MORRIS':
-        return ['2222', '61dab944-075d-4398-bfb7-d2c5cf09535a'];
-      case 'CROOKSTON':
-        return ['2223', '521fef68-181c-4f37-9a74-46661fc98abc'];
-    }
-  })();
-
+const configure = (window, browzineConfig) => {
   window.browzine = {
-    api: `https://public-api.thirdiron.com/public/v1/libraries/${id}`,
-    apiKey,
+    api: `https://public-api.thirdiron.com/public/v1/libraries/${browzineConfig.id}`,
+    apiKey: browzineConfig.key,
     journalCoverImagesEnabled: true,
     journalBrowZineWebLinkTextEnabled: false,
     journalBrowZineWebLinkText: 'View Journal Contents',
@@ -69,15 +53,16 @@ const loadScript = (window) => {
 };
 
 class BrowzineService {
-  constructor($window) {
+  constructor($window, config) {
     this.$window = $window;
+    this.config = config;
   }
 
   /**
    * To be called in the module's run block.
    */
   init() {
-    configure(this.$window);
+    configure(this.$window, this.config.browzine);
     loadScript(this.$window);
   }
 
@@ -93,6 +78,6 @@ class BrowzineService {
   }
 }
 
-BrowzineService.$inject = ['$window'];
+BrowzineService.$inject = ['$window', 'config'];
 
 export default BrowzineService;
