@@ -20,7 +20,8 @@ class ChangeAlmaSkinController {
   }
 
   hasLinkElement() {
-    return !!this.prmFullViewServiceContainerCtrl.service.linkElement;
+    const service = this.prmFullViewServiceContainerCtrl.service;
+    return !!(service && service.linkElement);
   }
 
 }
