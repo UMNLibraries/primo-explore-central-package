@@ -14,6 +14,7 @@
     "angular-mocks": "^1.6.10",
     "angular-translate": "^2.19.0",
     "angular-ui-router": "0.3.2",
+    "babel-plugin-transform-html-import-to-string": "^2.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-angular": "^4.1.0",
     "eslint-plugin-jasmine": "^4.1.2",
@@ -37,7 +38,7 @@
     "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu' --saml --useScss",
     "start-prod": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo.lib.umn.edu' --saml --useScss",
     "start-qa": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-qa.hosted.exlibrisgroup.com' --useScss",
-    "test": "karma start --singleRun",
+    "test": "BABEL_ENV=test karma start --singleRun",
     "test-e2e": "webdriver-manager update && protractor e2e-tests/protractor.conf",
     "pkg": "gulp create-package --browserify --view CENTRAL_PACKAGE --useScss",
     "gen-color-scheme": "gulp app-css --view CENTRAL_PACKAGE --proxy 'https://primo-test.lib.umn.edu'"
