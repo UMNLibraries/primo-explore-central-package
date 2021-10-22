@@ -1,13 +1,17 @@
 import template from './ill-requests.html';
 
-const MAX_REQUESTS_TO_DISPLAY = 3;
-
 class IllRequestsController {
   constructor(illiad, $window) {
     this.illiad = illiad;
     this.$window = $window;
-    this.maxDisplay = MAX_REQUESTS_TO_DISPLAY;
     this.requests = [];
+  }
+
+  /**
+   * Maximum number of requests to display.
+   */
+  get maxDisplay() {
+    return 3;
   }
 
   $onInit() {
