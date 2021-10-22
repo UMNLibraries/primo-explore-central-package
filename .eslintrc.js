@@ -1,11 +1,12 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es6: true,
     node: true,
     jasmine: true,
   },
-  extends: ['eslint:recommended', 'plugin:protractor/recommended'],
+  extends: ['eslint:recommended'],
   parserOptions: {
     sourceType: 'module',
   },
@@ -23,5 +24,12 @@ module.exports = {
   globals: {
     angular: false,
   },
-  plugins: ['jasmine', 'protractor', 'angular'],
+  plugins: ['jasmine', 'angular'],
+  overrides: [
+    {
+      files: 'e2e-tests/*.js',
+      extends: ['plugin:protractor/recommended'],
+      plugins: ['protractor'],
+    },
+  ],
 };
