@@ -1,7 +1,9 @@
+import IllArticles from './ill-articles.component';
+const MAX_ARTICLES_TO_DISPLAY = (new IllArticles.controller).maxDisplay;
+
 describe('ILL Articles Component', () => {
   let element,
     scope,
-    controller,
     $q,
     $compile,
     $window,
@@ -10,9 +12,6 @@ describe('ILL Articles Component', () => {
 
   beforeEach(() => {
     angular.mock.module('ill');
-  });
-
-  beforeEach(() => {
     angular.mock.inject(($injector) => {
       scope = $injector.get('$rootScope').$new();
       illiadService = $injector.get('illiad');
@@ -22,32 +21,9 @@ describe('ILL Articles Component', () => {
     });
   });
 
-  beforeEach(() => {
-    spyOn($window, 'open');
-  });
-
-  function initializeComponent() {
-    const html = '<ill-articles></ill-articles>';
-    element = $compile(html)(scope);
-    controller = element.controller('ill-articles');
-    scope.$apply();
-  }
-
-  /**
-   *
-   * @param {number} n number of articles to create
-   */
-  function stubArticles(n = 1) {
-    articles = Array.from({ length: n }, (_, i) => ({
-      txnNum: i,
-      title: `Tets Title ${i}`,
-      author: `Test Author ${0}`,
-    }));
-    spyOn(illiadService, 'getArticles').and.returnValue($q.resolve(articles));
-  }
-
   it('should have a clickable title', () => {
     stubArticles(0);
+    spyOn($window, 'open');
 
     initializeComponent();
 
@@ -72,6 +48,7 @@ describe('ILL Articles Component', () => {
   it('should link to full-text', () => {
     const articleCount = 2;
     stubArticles(articleCount);
+    spyOn($window, 'open');
 
     initializeComponent();
 
@@ -87,13 +64,14 @@ describe('ILL Articles Component', () => {
   });
 
   it('should display a link to ILLiad when then number of articles exceeds the display threshold', () => {
-    const articleCount = 4;
+    const articleCount = MAX_ARTICLES_TO_DISPLAY + 1;
     stubArticles(articleCount);
+    spyOn($window, 'open');
 
     initializeComponent();
 
     const listItems = element.find('md-list-item');
-    expect(listItems.length).toEqual(controller.maxDisplay);
+    expect(listItems.length).toEqual(MAX_ARTICLES_TO_DISPLAY);
     const button = element.find('md-button');
     expect(button.text().trim()).toEqual(`View all ${articleCount} articles`);
     button.triggerHandler('click');
@@ -112,4 +90,23 @@ describe('ILL Articles Component', () => {
     const content = element.text().trim();
     expect(content).toContain('There are no documents');
   });
+
+  function initializeComponent() {
+    const html = '<ill-articles></ill-articles>';
+    element = $compile(html)(scope);
+    scope.$apply();
+  }
+
+  /**
+   *
+   * @param {number} n number of articles to create
+   */
+  function stubArticles(n = 1) {
+    articles = Array.from({ length: n }, (_, i) => ({
+      txnNum: i,
+      title: `Tets Title ${i}`,
+      author: `Test Author ${0}`,
+    }));
+    spyOn(illiadService, 'getArticles').and.returnValue($q.resolve(articles));
+  }
 });

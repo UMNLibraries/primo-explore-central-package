@@ -1,13 +1,17 @@
 import template from './ill-articles.html';
 
-const MAX_ARTICLES_TO_DISPLAY = 3;
-
 class IllArticlesController {
   constructor(illiad, $window) {
     this.illiad = illiad;
     this.$window = $window;
-    this.maxDisplay = MAX_ARTICLES_TO_DISPLAY;
     this.articles = [];
+  }
+
+  /**
+   * Maximum number of articles to display.
+   */
+  get maxDisplay() {
+    return 3;
   }
 
   $onInit() {
