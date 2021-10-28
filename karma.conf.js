@@ -16,7 +16,7 @@ module.exports = function(config) {
       './node_modules/angular-animate/angular-animate.js',
       './node_modules/angular-aria/angular-aria.js',
       './node_modules/angular-cookies/angular-cookies.js',
-      './js/custom.js',
+      './js/main.js',
       './js/**/*.spec.js',
     ],
 
@@ -39,12 +39,13 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 
     preprocessors: {
+      'js/main.js': ['browserify'],
       'js/**/*.spec.js': ['browserify']
     },
 
     browserify: {
       debug: true,
-      transform: [[ 'babelify', {presets: ['es2015']}]]
+      transform: [[ 'babelify', {presets: ['@babel/preset-env']}]]
     },
 
     // Babel preprocessor specific configuration
