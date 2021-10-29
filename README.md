@@ -19,7 +19,7 @@ Custom JavaScript, HTML, CSS, and images for the Primo AngularJS UI. The files i
 
     ```bash
     cd primo-explore/custom
-    git clone git@github.umn.edu:gpeterso/primo-explore-central-package.git CENTRAL_PACKAGE
+    git clone git@github.com:UMNLibraries/primo-explore-central-package.git CENTRAL_PACKAGE
     ```
 
 3. Install the project dependencies: 
