@@ -38,7 +38,11 @@ class Config {
   get browzine() {
     const id = this.viewProperties.getValue('umn-browzine-id');
     const key = this.viewProperties.getValue('umn-browzine-key');
-    return {id, key};
+    return { id, key };
+  }
+
+  get getItNote() {
+    return this.viewProperties.getValue('umn-get-it-note');
   }
 }
 
