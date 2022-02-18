@@ -45,3 +45,10 @@ prm-facet-range {
     padding-left: 1em;
   }
 }
+
+// Don't show the exclude facet icons in the medium breakpoint
+@media (min-width:960px) {
+  .available-facets .section-content .md-chips .md-chip .button-exclude {
+    opacity: 0 !important;
+  }
+}
