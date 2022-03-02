@@ -47,8 +47,12 @@ prm-facet-range {
 }
 
 // Don't show the exclude facet icons in the medium breakpoint
-@media (min-width:960px) {
-  .available-facets .section-content .md-chips .md-chip .button-exclude {
+@media (min-width: 960px) {
+  .available-facets
+    .section-content
+    .md-chips
+    .md-chip:not(:hover)
+    .button-exclude:not(:focus) {
     opacity: 0 !important;
   }
 }
