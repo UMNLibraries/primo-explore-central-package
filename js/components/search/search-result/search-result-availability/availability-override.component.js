@@ -5,7 +5,11 @@ class AvailabilityOverrideController {
   $onInit() {
     const dataSource = this.parentCtrl.result.pnx.control.sourceid[0];
     if (dataSource === 'ARCHIVES_SPACE')
-      this.availability = 'View collection guide';
+      this.availability = this.translate('fulldisplay.linktocollguide');
+  }
+
+  translate(code) {
+    return this.parentCtrl.$translate.instant(code);
   }
 
   set availability(msg) {
