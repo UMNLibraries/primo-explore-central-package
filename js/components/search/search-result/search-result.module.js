@@ -5,6 +5,7 @@ import PrmSearchResultListAfter from './search-result-list/prm-search-result-lis
 import PrmNoSearchResultAfter from './search-result-list/prm-no-search-result-after.component';
 import PrmSearchResultAvailabilityLineAfter from './search-result-availability/prm-search-result-availability-line-after.component';
 import PrmSearchErrorMessageAfter from './error-message/prm-search-error-message-after.component';
+import PrmAvailbilityOverride from './search-result-availability/availability-override.component';
 
 export default angular
   .module('searchResult', [
@@ -12,6 +13,7 @@ export default angular
   ])
   .service('browzineService', BrowzineService)
   .component('browzine', BrowzineComponent)
+  .component('availabilityOverride', PrmAvailbilityOverride)
   .component('prmNoSearchResultAfter', PrmNoSearchResultAfter)
   .component('prmSearchResultListAfter', PrmSearchResultListAfter)
   .component('prmSearchResultAvailabilityLineAfter', PrmSearchResultAvailabilityLineAfter)
