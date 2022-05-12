@@ -1,6 +1,6 @@
 prm-search-bar {
   button {
-    &.switch-to-advanced, 
+    &.switch-to-advanced,
     &.switch-to-simple {
       //border: solid 1px;
       font-weight: 600;
@@ -9,5 +9,31 @@ prm-search-bar {
 }
 
 .classic-input .search-scope.journal-search-tile {
-  padding: 0 .5em;
+  padding: 0 0.5em;
+}
+
+// Uncollapse Advannced Search
+#advancedSearchTabs {
+  min-height: 700px;
+  overflow: auto;
+}
+@media (min-width: 600px) {
+  #advancedSearchTabs {
+    min-height: 400px;
+  }
+}
+.string-block .animate-scale .middle {
+  display: none;
+}
+.collapsed-area .layout-wrap .layout-align-space-between-center .layout-row {
+  display: none;
+}
+prm-search-bar
+  .advanced-search-wrapper
+  md-input-container.bold-text
+  input.ng-hide:not(.ng-hide-animate) {
+  display: block !important;
+}
+prm-advanced-search * > button.collapsed-button * > md-icon {
+  display: none;
 }
