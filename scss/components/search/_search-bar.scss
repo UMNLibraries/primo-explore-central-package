@@ -1,6 +1,6 @@
 prm-search-bar {
   button {
-    &.switch-to-advanced, 
+    &.switch-to-advanced,
     &.switch-to-simple {
       //border: solid 1px;
       font-weight: 600;
@@ -9,5 +9,9 @@ prm-search-bar {
 }
 
 .classic-input .search-scope.journal-search-tile {
-  padding: 0 .5em;
+  padding: 0 0.5em;
+}
+
+prm-advanced-search .collapsed-area {
+  display: none;
 }
