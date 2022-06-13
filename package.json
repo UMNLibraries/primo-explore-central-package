@@ -37,12 +37,12 @@
     "primo-explore-hathitrust-availability": "^2.7.0"
   },
   "scripts": {
-    "start": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu' --saml --useScss",
-    "start-prod": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo.lib.umn.edu' --saml --useScss",
-    "start-qa": "gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-qa.hosted.exlibrisgroup.com' --useScss",
+    "start": "npx gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-test.lib.umn.edu' --saml --useScss",
+    "start-prod": "npx gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo.lib.umn.edu' --saml --useScss",
+    "start-qa": "npx gulp run --view CENTRAL_PACKAGE --browserify --proxy 'https://primo-qa.hosted.exlibrisgroup.com' --useScss",
     "test": "BABEL_ENV=test karma start --singleRun",
-    "test-e2e": "webdriver-manager update && protractor e2e-tests/protractor.conf",
-    "pkg": "gulp create-package --browserify --view CENTRAL_PACKAGE --useScss",
-    "gen-color-scheme": "gulp app-css --view CENTRAL_PACKAGE --proxy 'https://primo-test.lib.umn.edu'"
+    "test-e2e": "webdriver-manager update --versions.chrome $(chromium --version | sed 's/^[^0-9]*\\([0-9.]*\\).*/\\1/') && protractor e2e-tests/protractor.conf",
+    "pkg": "npx gulp create-package --browserify --view CENTRAL_PACKAGE --useScss",
+    "gen-color-scheme": "npx gulp app-css --view CENTRAL_PACKAGE --proxy 'https://primo-test.lib.umn.edu'"
   }
 }
