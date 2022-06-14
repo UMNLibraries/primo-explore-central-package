@@ -16,7 +16,8 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
@@ -27,11 +28,12 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node", 
 
+	// The Z bind on the mounts is needed for SELinux
 	"workspaceFolder": "/home/node/primo-explore-devenv/primo-explore/custom/CENTRAL_PACKAGE",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/node/primo-explore-devenv/primo-explore/custom/CENTRAL_PACKAGE,type=bind,Z",
 	"mounts": ["source=${localWorkspaceFolder}/packages,target=/home/node/primo-explore-devenv/packages,type=bind,Z"],
-	"runArgs": ["--userns=keep-id"],
+	"runArgs": ["--userns=keep-id"], // podman-specific option to preserve proper ownership on the workspace directory
 	"containerUser": "node",
-	"postCreateCommand": "npm install",
-	"postStartCommand": "npm start"
+	"postCreateCommand": "npm install"
+//	"postStartCommand": "npm start"
 }
