@@ -28,6 +28,7 @@ Custom JavaScript, HTML, CSS, and images for the Primo AngularJS UI. The files i
     cd CENTRAL_PACKAGE
     npm install
     ```
+*Note: If you use VS Code, you can opt to use the [remote-containers plugin](https://code.visualstudio.com/docs/remote/containers) instead of following the setup steps above. Refer to `.devcontainer/devcontainer.json` for details.* 
 
 ## Local Development
 Run `npm run start`. This task builds the custom.js and custom1.css files, watches for js/css changes, and launches a Browsersync proxy that sits between the localhost and the UMN Primo sandbox. To preview local changes in the sandbox, point a browser to `localhost:8003/primo-explore/?vid={campus view ID}`. For example http://localhost:8003/primo-explore/?vid=TWINCITIES.
