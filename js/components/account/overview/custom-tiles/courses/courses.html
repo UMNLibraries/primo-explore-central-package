@@ -9,6 +9,12 @@
         </div>
       </div>
       <div layout="column" layout-align="center center">
+        <prm-spinner
+          ng-if="$ctrl.loading"
+          class="default-loader dark-on-light overlay-cover no-text"
+          layout="row"
+          layout-align="center center"
+        ></prm-spinner>
         <md-list>
           <md-list-item ng-repeat="course in $ctrl.courses | orderBy:['subject', 'courseNumber'] | uniqByKeys:['subject', 'courseNumber']">
             <a class="" ng-href="https://www.lib.umn.edu/course/{{course.subject}}/{{course.courseNumber}}">

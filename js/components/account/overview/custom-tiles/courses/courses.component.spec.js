@@ -45,7 +45,7 @@ const courses = JSON.parse(`
 }]`);
 
 describe('Courses Component', () => {
-  let element, scope, controller, $compile, coursesService;
+  let element, scope, controller, $compile, coursesService, $q;
 
   beforeEach(() => {
     angular.mock.module('courses');
@@ -56,6 +56,7 @@ describe('Courses Component', () => {
       scope = $injector.get('$rootScope').$new();
       $compile = $injector.get('$compile');
       coursesService = $injector.get('courses');
+      $q = $injector.get('$q');
     });
     scope.callback = jasmine.createSpy('callback');
     let html = '<courses></courses>';
@@ -65,15 +66,11 @@ describe('Courses Component', () => {
   });
 
   function mockCourses() {
-    spyOn(coursesService, 'getCourses').and.returnValue({
-      then: fn => fn(courses)
-    });
+    spyOn(coursesService, 'getCourses').and.returnValue($q.resolve(courses));
   }
 
   function mockZeroCourses() {
-    spyOn(coursesService, 'getCourses').and.returnValue({
-      then: fn => fn([])
-    });
+    spyOn(coursesService, 'getCourses').and.returnValue($q.resolve([]));
   }
 
   function loadCourses() {

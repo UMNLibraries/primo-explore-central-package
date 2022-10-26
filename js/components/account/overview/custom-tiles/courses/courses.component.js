@@ -7,8 +7,10 @@ class CoursesController {
   }
 
   loadCourses() {
+    this.loading = true;
     this.coursesService.getCourses()
-      .then(courses => this.courses = courses);
+      .then(courses => this.courses = courses)
+      .finally(() => (this.loading = false));
   }
 
   hasCourses() {
