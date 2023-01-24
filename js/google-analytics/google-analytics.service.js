@@ -17,7 +17,7 @@ class GoogleAnalytics {
     this.$window = $window;
 
     _loadAnalytics(this.$window);
-    this.$window.ga('create', this.trackingId, 'auto');
+    this.$window.ga('create', this.trackingId);
     this.$window.ga('set', 'anonymizeIp', true);
     
     if (this.campusDim) {
