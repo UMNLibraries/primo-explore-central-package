@@ -6,6 +6,10 @@ export default {
   bindings: { collapsed: '<' },
   require: { prmAdvancedSearchCtrl: '^prmAdvancedSearch' },
   controller: class {
+    $onInit() {
+      if (this.collapsed) this.prmAdvancedSearchCtrl.toggleFilters();
+    }
+
     $onChanges(changes) {
       if (changes.collapsed.currentValue === true)
         this.prmAdvancedSearchCtrl.toggleFilters();
